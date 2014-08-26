@@ -1,0 +1,3 @@
+폰트
+Marker Felt -> Cocos2dx기본 제공폰트
+GodoB/B -> 고도 폰트 (http://www.godo.co.kr/event/godofont.html)
