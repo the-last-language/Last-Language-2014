@@ -20,6 +20,15 @@ public:
 	
 	void startScene(Ref *sender);
 	void aboutScene(Ref *sender);
+	void loadScene1(Ref *sender);
+
+	void load1(Ref *sender);
+	void load2(Ref *sender);
+	void load3(Ref *sender);
+	void load201(Ref *sender);
+	void load202(Ref *sender);
+	void load203(Ref *sender);
+	void loadButton(int num);
 };
 
 #endif // __MenuScene_SCENE_H__

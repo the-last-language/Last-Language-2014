@@ -21,6 +21,8 @@ public:
 	//void changeScene(Ref *sender);
 
 	void goNext(Ref *sender);
+
+	void initAllDefaults();
 };
 
 #endif // __MenuScene_SCENE_H__

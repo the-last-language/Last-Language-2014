@@ -67,7 +67,6 @@ bool IntroScene2::init()
 
 
 
-
 void IntroScene2::menuCloseCallback(Ref* pSender)
 {
 

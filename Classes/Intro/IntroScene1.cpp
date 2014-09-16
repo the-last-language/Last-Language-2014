@@ -1,6 +1,7 @@
 ﻿#include "IntroScene1.h"
 #include "IntroScene2.h"
 #include "../KoreanUTF8.h"
+#include "../Pause/PauseScene.h"
 USING_NS_CC;
 
 Scene* IntroScene1::createScene()
@@ -39,7 +40,7 @@ bool IntroScene1::init()
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);*/
 
-
+	initAllDefaults();
 
 	auto sprite1 = Sprite::create("scene/testScene1.png");
 
@@ -66,6 +67,23 @@ bool IntroScene1::init()
 }
 
 
+void IntroScene1::initAllDefaults()
+{
+	//Userdefault의 모든 것을 초기화 한다.
+	//새 게임이 시작하기 때문.
+
+	//아이템 초기화
+	UserDefault::getInstance()->setIntegerForKey("item_wire1", 0);
+	UserDefault::getInstance()->flush();
+	UserDefault::getInstance()->setIntegerForKey("item_bg0_001", 0);
+	UserDefault::getInstance()->flush();
+	UserDefault::getInstance()->setIntegerForKey("item_bg0_002", 0);
+	UserDefault::getInstance()->flush();
+	UserDefault::getInstance()->setIntegerForKey("chip_001", 0);
+	UserDefault::getInstance()->flush();
+	UserDefault::getInstance()->setIntegerForKey("chip_002", 0);
+	UserDefault::getInstance()->flush();
+}
 
 
 void IntroScene1::menuCloseCallback(Ref* pSender)

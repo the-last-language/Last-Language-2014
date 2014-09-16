@@ -24,15 +24,15 @@ bool AboutScene::init()
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	auto sprite = Sprite::create("main_temp.png");
+	auto sprite = Sprite::create("aboutUS.png");
 
 	sprite->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
 
 	this->addChild(sprite, 0);
 
-	auto label = Label::createWithTTF(UTF8("아직 테스트 중.\n딱히 할 말은 없음.\n굴림 극혐이라 고도폰트 사용."),"fonts/GodoB.ttf",30);
-	label->setPosition(Point(480,320));
-	this->addChild(label);
+	//auto label = Label::createWithTTF(UTF8("아직 테스트 중.\n딱히 할 말은 없음.\n굴림 극혐이라 고도폰트 사용."),"fonts/GodoB.ttf",30);
+	//label->setPosition(Point(480,320));
+	//this->addChild(label);
 
 	//닫기 메뉴 예시
 	
