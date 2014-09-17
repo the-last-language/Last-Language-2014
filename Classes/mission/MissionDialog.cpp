@@ -33,6 +33,9 @@ bool MissionDialog::init()
 	switch(MissionDialog_num)
 	{
 	case 0://game1, 문장찾기 게임 실패
+		int fail = UserDefault::getInstance()->getIntegerForKey("failcnt");
+		UserDefault::getInstance()->setIntegerForKey("failcnt", fail+1);
+	UserDefault::getInstance()->flush();
 		sprite1 = Sprite::create("game1/mission/0_fail.png");
 		break;
 	case 1://game1, 문장찾기 게임 성공
@@ -62,7 +65,15 @@ bool MissionDialog::init()
 	UserDefault::getInstance()->setIntegerForKey("mission0", 0);
 	UserDefault::getInstance()->flush();
 		break;//여기까지 GameScene1에 할당된 대화창
-
+	case 2://단어 나누기 실패
+		sprite1 = Sprite::create("game1/mission/1_fail.png");
+		int fail = UserDefault::getInstance()->getIntegerForKey("failcnt");
+		UserDefault::getInstance()->setIntegerForKey("failcnt", fail+1);
+	UserDefault::getInstance()->flush();
+		break;
+	case 3://단어 나누기 성공
+		sprite1 = Sprite::create("game1/mission/1_success.png");
+		break;
 
 	default:
 		sprite1 = Sprite::create("MissionDialog/bg.png");

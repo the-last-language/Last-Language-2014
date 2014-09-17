@@ -40,7 +40,7 @@ bool IntroScene2::init()
     this->addChild(menu, 1);*/
 
 
-	auto sprite2 = Sprite::create("scene/testScene2.png");
+	auto sprite2 = Sprite::create("scene/Scene1.jpg");
 
 	sprite2->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
 
@@ -56,7 +56,7 @@ bool IntroScene2::init()
 	menu_1->setPosition(Vec2::ZERO);
 	this->addChild(menu_1);
 	
-	auto label = Label::createWithTTF(UTF8("임시씬2.\n출구."),"fonts/GodoB.ttf",30);
+	auto label = Label::createWithTTF(UTF8("이 장치들은 무엇인가."),"fonts/GodoB.ttf",30);
 	label->setPosition(Point(480,100));
 	this->addChild(label);
 	

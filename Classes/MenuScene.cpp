@@ -1,6 +1,7 @@
 ﻿#include "MenuScene.h"
 #include "Intro/IntroScene1.h"
 #include "AllScene.h"
+#include "Game/GameScene4.h"
 #include "mission/Mission1.h"
 USING_NS_CC;
 
@@ -115,6 +116,11 @@ void MenuScene::load3(Ref* Sender)
 
 	Director::getInstance()->replaceScene(GameScene3::createScene());
 }
+void MenuScene::load4(Ref* Sender)
+{
+
+	Director::getInstance()->replaceScene(GameScene4::createScene());
+}
 void MenuScene::load201(Ref* Sender)
 {
 
@@ -155,6 +161,13 @@ void MenuScene::loadButton(int num)
 			break;
 		case 3:
 			item_2 =MenuItemImage::create("btn2.png", "btn2_on.png", CC_CALLBACK_1(MenuScene::load3, this));
+			item_2->setPosition(800, 240);
+			menu_2 = Menu::create(item_2, NULL);
+			menu_2->setPosition(Vec2::ZERO);
+			this->addChild(menu_2);
+			break;
+		case 4:
+			item_2 =MenuItemImage::create("btn2.png", "btn2_on.png", CC_CALLBACK_1(MenuScene::load4, this));
 			item_2->setPosition(800, 240);
 			menu_2 = Menu::create(item_2, NULL);
 			menu_2->setPosition(Vec2::ZERO);

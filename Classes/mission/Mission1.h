@@ -15,17 +15,28 @@ public:
     // a selector callback
     void menuCloseCallback(cocos2d::Ref* pSender);
 
-	void Mission1_1_1(cocos2d::Ref* pSender);
-	void Mission1_1_2(cocos2d::Ref* pSender);
-	void Mission1_1_3(cocos2d::Ref* pSender);
-	void Mission1_1_4(cocos2d::Ref* pSender);
-	void Mission1_1_5(cocos2d::Ref* pSender);
-	void Mission1_1_6(cocos2d::Ref* pSender);
-	void Mission1_1_7(cocos2d::Ref* pSender);
-	void Mission1_1_8(cocos2d::Ref* pSender);
-	void Mission1_1_9(cocos2d::Ref* pSender);
-	void Mission1_1_10(cocos2d::Ref* pSender);
+	void m01(cocos2d::Ref* pSender);
+	void m02(cocos2d::Ref* pSender);
+    void m03(cocos2d::Ref* pSender);
+	void m04(cocos2d::Ref* pSender);
+
+	void m05(cocos2d::Ref* pSender);
+	void m06(cocos2d::Ref* pSender);
+	void m07(cocos2d::Ref* pSender);
+	void m08(cocos2d::Ref* pSender);
+
+	void m09(cocos2d::Ref* pSender);
+	void m10(cocos2d::Ref* pSender);
+	void m11(cocos2d::Ref* pSender);
+	void m12(cocos2d::Ref* pSender);
     
+	void m13(cocos2d::Ref* pSender);
+	void m14(cocos2d::Ref* pSender);
+	void m15(cocos2d::Ref* pSender);
+	void m16(cocos2d::Ref* pSender);
+
+	void result(cocos2d::Ref* pSender);
+
 	void fail(cocos2d::Ref* pSender);
 	void nothing(cocos2d::Ref* pSender);
 	void initCancel();

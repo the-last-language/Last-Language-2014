@@ -41,7 +41,7 @@ bool IntroScene3::init()
     this->addChild(menu, 1);*/
 
 
-	auto sprite1 = Sprite::create("scene/testScene3.png");
+	auto sprite1 = Sprite::create("scene/Scene1.jpg");
 
 	sprite1->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
 
@@ -56,7 +56,7 @@ bool IntroScene3::init()
 	this->addChild(menu_1);
 
 	
-	auto label = Label::createWithTTF(UTF8("임시씬3.\n바깥의 모습."),"fonts/GodoB.ttf",30);
+	auto label = Label::createWithTTF(UTF8("단말기 챙겨가자."),"fonts/GodoB.ttf",30);
 	label->setPosition(Point(480,100));
 	this->addChild(label);
     

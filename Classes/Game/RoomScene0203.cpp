@@ -31,8 +31,8 @@ bool RoomScene0203::init()
 	UserDefault::getInstance()->flush();
 	initBG();
 	initObj1();//복도로 나가기
-	//initObj2();//칩 줍기
-	//initObj3();//전선 줍기
+	initObj2();//왼쪽 관물대
+	initObj3();//총기
 	initExit();
 
     
@@ -73,7 +73,7 @@ void RoomScene0203::initBG()
 	 Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	auto sprite1 = Sprite::create("game1/bg2.png");
+	auto sprite1 = Sprite::create("game1/bg2-2.png");
 
 	sprite1->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
 
@@ -86,8 +86,48 @@ void RoomScene0203::callObj1Content(Ref * pSender)
 {
 	Director::getInstance()->replaceScene(GameScene2::createScene());
 }
+void RoomScene0203::callObj2Content(Ref * pSender)
+{
+	UserDefault::getInstance()->setIntegerForKey("item_room0203_0", 1);
+	UserDefault::getInstance()->flush();
+	Director::getInstance()->replaceScene(RoomScene0203::createScene());
+}
+void RoomScene0203::callObj3Content(Ref * pSender)
+{
+	UserDefault::getInstance()->setIntegerForKey("item_room0203_1", 1);
+	UserDefault::getInstance()->flush();
+	Director::getInstance()->replaceScene(RoomScene0203::createScene());
+}
 
+void RoomScene0203::nothing(Ref* pSender)
+{
+}
 
+void RoomScene0203::initObj2()//왼쪽 관물대
+{
+	auto item_1 = MenuItemImage::create("game1/object/room0203_0.png", "game1/object/room0203_0_on.png", CC_CALLBACK_1(RoomScene0203::callObj2Content, this));
+	if(UserDefault::getInstance()->getIntegerForKey("item_room0203_0") == 1)
+	{
+		item_1 = MenuItemImage::create("game1/object/room0202_0.png", "game1/object/room0202_0.png", CC_CALLBACK_1(RoomScene0203::nothing, this));
+	}
+	item_1->setPosition(60, 640-270);
+	auto menu_1 = Menu::create(item_1, NULL);
+	menu_1->setPosition(Vec2::ZERO);
+	this->addChild(menu_1); 
+}
+
+void RoomScene0203::initObj3()//총기걸이.
+{
+	auto item_2 = MenuItemImage::create("game1/object/room0203_1.png", "game1/object/room0203_1_on.png", CC_CALLBACK_1(RoomScene0203::callObj3Content, this));
+	if(UserDefault::getInstance()->getIntegerForKey("item_room0203_1") == 1)
+	{
+		item_2 = MenuItemImage::create("game1/object/room0202_0.png", "game1/object/room0202_0.png", CC_CALLBACK_1(RoomScene0203::nothing, this));
+	}
+	item_2->setPosition(270, 640-315);
+	auto menu_2 = Menu::create(item_2, NULL);
+	menu_2->setPosition(Vec2::ZERO);
+	this->addChild(menu_2); 
+}
 
 //일시정지 메뉴 가기
 void RoomScene0203::menuCloseCallback(Ref* pSender)

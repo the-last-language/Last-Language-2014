@@ -17,14 +17,14 @@ public:
 	void callObj1Content(cocos2d::Ref* pSender);
     void callObj2Content(cocos2d::Ref* pSender);
 	void callObj3Content(cocos2d::Ref* pSender);
-
+	void nothing(cocos2d::Ref* pSender);
 
 	void initBG();
 	void initExit();
 	void initObj1();
 	void initObj2();
 	void initObj3();
-
+	
     // implement the "static create()" method manually
     CREATE_FUNC(RoomScene0202);
 	

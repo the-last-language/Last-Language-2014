@@ -42,13 +42,13 @@ bool IntroScene1::init()
 
 	initAllDefaults();
 
-	auto sprite1 = Sprite::create("scene/testScene1.png");
+	auto sprite1 = Sprite::create("scene/Scene1.jpg");
 
 	sprite1->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
 
 	this->addChild(sprite1, 0);
 
-	auto label = Label::createWithTTF(UTF8("임시씬1.\n갇혀있는 방."),"fonts/GodoB.ttf",30);
+	auto label = Label::createWithTTF(UTF8("여긴 뭐지? 뭐하다가 여기까지 왔을까."),"fonts/GodoB.ttf",30);
 	label->setPosition(Point(480,100));
 	this->addChild(label);
 
@@ -73,16 +73,65 @@ void IntroScene1::initAllDefaults()
 	//새 게임이 시작하기 때문.
 
 	//아이템 초기화
+	UserDefault::getInstance()->setIntegerForKey("failcnt", 0);
+	UserDefault::getInstance()->flush();
+
 	UserDefault::getInstance()->setIntegerForKey("item_wire1", 0);
 	UserDefault::getInstance()->flush();
 	UserDefault::getInstance()->setIntegerForKey("item_bg0_001", 0);
 	UserDefault::getInstance()->flush();
 	UserDefault::getInstance()->setIntegerForKey("item_bg0_002", 0);
 	UserDefault::getInstance()->flush();
+	UserDefault::getInstance()->setIntegerForKey("item_room0202_0", 0);
+	UserDefault::getInstance()->flush();
+	UserDefault::getInstance()->setIntegerForKey("item_room0202_1", 0);
+	UserDefault::getInstance()->flush();
 	UserDefault::getInstance()->setIntegerForKey("chip_001", 0);
 	UserDefault::getInstance()->flush();
 	UserDefault::getInstance()->setIntegerForKey("chip_002", 0);
 	UserDefault::getInstance()->flush();
+
+	UserDefault::getInstance()->setIntegerForKey("mission0", 0);
+	UserDefault::getInstance()->flush();
+
+	UserDefault::getInstance()->setIntegerForKey("Mission1", 0);
+	UserDefault::getInstance()->flush();
+
+	UserDefault::getInstance()->setIntegerForKey("m01", 0);
+		UserDefault::getInstance()->flush();
+		UserDefault::getInstance()->setIntegerForKey("m02", 0);
+		UserDefault::getInstance()->flush();
+	UserDefault::getInstance()->setIntegerForKey("m03", 0);
+		UserDefault::getInstance()->flush();
+		UserDefault::getInstance()->setIntegerForKey("m04", 0);
+		UserDefault::getInstance()->flush();
+
+			UserDefault::getInstance()->setIntegerForKey("m05", 0);
+		UserDefault::getInstance()->flush();
+		UserDefault::getInstance()->setIntegerForKey("m06", 0);
+		UserDefault::getInstance()->flush();
+	UserDefault::getInstance()->setIntegerForKey("m07", 0);
+		UserDefault::getInstance()->flush();
+		UserDefault::getInstance()->setIntegerForKey("m08", 0);
+		UserDefault::getInstance()->flush();
+
+			UserDefault::getInstance()->setIntegerForKey("m09", 0);
+		UserDefault::getInstance()->flush();
+		UserDefault::getInstance()->setIntegerForKey("m10", 0);
+		UserDefault::getInstance()->flush();
+	UserDefault::getInstance()->setIntegerForKey("m11", 0);
+		UserDefault::getInstance()->flush();
+		UserDefault::getInstance()->setIntegerForKey("m12", 0);
+		UserDefault::getInstance()->flush();
+
+			UserDefault::getInstance()->setIntegerForKey("m13", 0);
+		UserDefault::getInstance()->flush();
+		UserDefault::getInstance()->setIntegerForKey("m14", 0);
+		UserDefault::getInstance()->flush();
+	UserDefault::getInstance()->setIntegerForKey("m15", 0);
+		UserDefault::getInstance()->flush();
+		UserDefault::getInstance()->setIntegerForKey("m16", 0);
+		UserDefault::getInstance()->flush();
 }
 
 

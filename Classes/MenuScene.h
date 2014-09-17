@@ -25,6 +25,7 @@ public:
 	void load1(Ref *sender);
 	void load2(Ref *sender);
 	void load3(Ref *sender);
+	void load4(Ref *sender);
 	void load201(Ref *sender);
 	void load202(Ref *sender);
 	void load203(Ref *sender);

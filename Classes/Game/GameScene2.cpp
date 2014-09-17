@@ -49,7 +49,7 @@ bool GameScene2::init()
 void GameScene2::initObj1()//시작한 방으로 가기
 {
 	auto item_1 = MenuItemImage::create("game1/object/bg1_0.png", "game1/object/bg1_0_on.png", CC_CALLBACK_1(GameScene2::callObj1Content, this));
-	item_1->setPosition(30, 380);
+	item_1->setPosition(880, 640-415);
 	auto menu_1 = Menu::create(item_1, NULL);
 	menu_1->setPosition(Vec2::ZERO);
 	this->addChild(menu_1); 
@@ -58,7 +58,7 @@ void GameScene2::initObj1()//시작한 방으로 가기
 void GameScene2::initObj2()//잡방 1
 {
 	auto item_2 = MenuItemImage::create("game1/object/bg1_1.png", "game1/object/bg1_1_on.png", CC_CALLBACK_1(GameScene2::callObj2Content, this));
-	item_2->setPosition(210, 370);
+	item_2->setPosition(95, 640-415);
 	auto menu_2 = Menu::create(item_2, NULL);
 	menu_2->setPosition(Vec2::ZERO);
 	this->addChild(menu_2); 
@@ -67,7 +67,7 @@ void GameScene2::initObj2()//잡방 1
 void GameScene2::initObj3()//잡방2.
 {
 	auto item_1 = MenuItemImage::create("game1/object/bg1_2.png",	"game1/object/bg1_2_on.png", CC_CALLBACK_1(GameScene2::callObj3Content, this));
-	item_1->setPosition(860, 360);
+	item_1->setPosition(355, 640-395);
 	auto menu_1 = Menu::create(item_1, NULL);
 	menu_1->setPosition(Vec2::ZERO);
 	this->addChild(menu_1); 
@@ -76,7 +76,7 @@ void GameScene2::initObj3()//잡방2.
 void GameScene2::initObj4()//잡방3.
 {
 	auto item_1 = MenuItemImage::create("game1/object/bg1_3.png",	"game1/object/bg1_3_on.png", CC_CALLBACK_1(GameScene2::callObj4Content, this));
-	item_1->setPosition(715, 365);
+	item_1->setPosition(715, 640-395);
 	auto menu_1 = Menu::create(item_1, NULL);
 	menu_1->setPosition(Vec2::ZERO);
 	this->addChild(menu_1); 
@@ -85,20 +85,12 @@ void GameScene2::initObj4()//잡방3.
 void GameScene2::initObj5()//중앙홀로 가기
 {
 	auto item_1 = MenuItemImage::create("game1/object/bg1_4.png",	"game1/object/bg1_4_on.png", CC_CALLBACK_1(GameScene2::callObj5Content, this));
-	item_1->setPosition(545, 385);
+	item_1->setPosition(490, 640-370);
 	auto menu_1 = Menu::create(item_1, NULL);
 	menu_1->setPosition(Vec2::ZERO);
 	this->addChild(menu_1); 
 }
 
-void GameScene2::initObj6()//잡방2.
-{
-	auto item_1 = MenuItemImage::create("game1/object/bg0_2.png",	"game1/object/bg0_2_on.png", CC_CALLBACK_1(GameScene2::callObj1Content, this));
-	item_1->setPosition(207, 167);
-	auto menu_1 = Menu::create(item_1, NULL);
-	menu_1->setPosition(Vec2::ZERO);
-	this->addChild(menu_1); 
-}
 
 void GameScene2::initExit()
 {

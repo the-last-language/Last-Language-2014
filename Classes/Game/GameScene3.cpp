@@ -1,5 +1,6 @@
 ﻿#include "GameScene2.h"
 #include "GameScene3.h"
+#include "GameScene4.h"
 #include "GameScene1Obj1.h"
 #include "MenuScene.h"
 #include "../Pause/PauseScene.h"
@@ -118,7 +119,7 @@ void GameScene3::callObj1Content(Ref * pSender)
 //칩을 주워라
 void GameScene3::callObj2Content(Ref * pSender)
 {
-	Director::getInstance()->pushScene(GameScene1Obj1::createScene());
+	Director::getInstance()->pushScene(GameScene4::createScene());
 }
 
 //전선을 주워라
