@@ -2,7 +2,7 @@
 #include "MissionDialog.h"
 #include "MenuScene.h"
 #include "KoreanUTF8.h"
-
+#include "Game/RoomScene0501.h"
 USING_NS_CC;
 
 Scene* Mission1::createScene()
@@ -42,7 +42,7 @@ bool Mission1::init()
 	
 	//배경 지정.
 	int wires = UserDefault::getInstance()->getIntegerForKey("item_wire1");
-
+	//ran = 2;
 	auto sprite1_1= Sprite::create("game1/mission/1_1.png");
 	if (ran == 2)
 	{
@@ -242,7 +242,7 @@ bool Mission1::init()
 	}
 	item_11->setPosition(w3_1+36+35, 640-192);
 	if(ran == 2)
-		item_11->setPosition(w2_2+36+35, 640-192);
+		item_11->setPosition(w3_2+36+35, 640-192);
 	auto menu_11 = Menu::create(item_11, NULL);
 	menu_11->setPosition(Vec2::ZERO);
 	this->addChild(menu_11); 
@@ -277,7 +277,7 @@ bool Mission1::init()
 	}
 	item_13->setPosition(w4_1, 640-192);
 	if(ran == 2)
-		item_9->setPosition(w4_2, 640-192);
+		item_13->setPosition(w4_2, 640-192);
 	auto menu_13 = Menu::create(item_13, NULL);
 	menu_13->setPosition(Vec2::ZERO);
 	this->addChild(menu_13); 
@@ -301,7 +301,7 @@ bool Mission1::init()
 	auto item_15 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire_on.png", CC_CALLBACK_1(Mission1::m15, this));
 	if(UserDefault::getInstance()->getIntegerForKey("m15") == 1)
 	{
-		item_10 = MenuItemImage::create("game1/mission/1_wire_on.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m15, this));
+		item_15 = MenuItemImage::create("game1/mission/1_wire_on.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m15, this));
 	}
 	else if(wires == 0)
 	{
@@ -332,7 +332,7 @@ bool Mission1::init()
 
 	auto item_on = MenuItemImage::create("game1/mission/1_button.png",	"game1/mission/1_button_on.png", CC_CALLBACK_1(Mission1::result, this));
 
-	item_on->setPosition(350, 640-365);
+	item_on->setPosition(280, 640-365);
 	auto menu_on = Menu::create(item_on, NULL);
 	menu_on->setPosition(Vec2::ZERO);
 	this->addChild(menu_on); 
@@ -367,7 +367,7 @@ void Mission1::menuCloseCallback(Ref* pSender)
     return;
 #endif
 
-	Director::getInstance()->popScene();
+	Director::getInstance()->replaceScene(RoomScene0501::createScene());
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     exit(0);
 #endif
@@ -510,7 +510,7 @@ void Mission1::m06(Ref* pSender)
 }
 void Mission1::m07(Ref* pSender)
 {
-		if(UserDefault::getInstance()->getIntegerForKey("m04") == 1)
+		if(UserDefault::getInstance()->getIntegerForKey("m07") == 1)
 	{
 
 		UserDefault::getInstance()->setIntegerForKey("m07", 0);
@@ -765,13 +765,18 @@ void Mission1::result(Ref* pSender)
 		{
 			UserDefault::getInstance()->setIntegerForKey("mission_result", 2);
 			UserDefault::getInstance()->flush();
-			Director::getInstance()->replaceScene(MissionDialog::createScene());
+			Director::getInstance()->replaceScene(RoomScene0501::createScene());
+			Director::getInstance()->pushScene(MissionDialog::createScene());
 		}
 		else
 		{
 			UserDefault::getInstance()->setIntegerForKey("mission_result", 3);
 			UserDefault::getInstance()->flush();
-			Director::getInstance()->replaceScene(MissionDialog::createScene());
+			UserDefault::getInstance()->setIntegerForKey("Mission1_complete", 1);
+			UserDefault::getInstance()->flush();
+			Director::getInstance()->replaceScene(RoomScene0501::createScene());
+			Director::getInstance()->pushScene(MissionDialog::createScene());
+			
 		}
 	}
 	else if(UserDefault::getInstance()->getIntegerForKey("Mission1") == 2)
@@ -788,13 +793,18 @@ void Mission1::result(Ref* pSender)
 		{
 			UserDefault::getInstance()->setIntegerForKey("mission_result", 2);
 			UserDefault::getInstance()->flush();
-			Director::getInstance()->replaceScene(MissionDialog::createScene());
+			Director::getInstance()->replaceScene(RoomScene0501::createScene());
+			Director::getInstance()->pushScene(MissionDialog::createScene());
 		}
 		else
 		{
 			UserDefault::getInstance()->setIntegerForKey("mission_result", 3);
 			UserDefault::getInstance()->flush();
-			Director::getInstance()->replaceScene(MissionDialog::createScene());
+			UserDefault::getInstance()->setIntegerForKey("Mission1_complete", 1);
+			UserDefault::getInstance()->flush();
+			Director::getInstance()->replaceScene(RoomScene0501::createScene());
+			Director::getInstance()->pushScene(MissionDialog::createScene());
+			
 		}
 	}
 

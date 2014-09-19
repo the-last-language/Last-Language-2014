@@ -26,9 +26,14 @@ public:
 	void load2(Ref *sender);
 	void load3(Ref *sender);
 	void load4(Ref *sender);
+	void load5(Ref *sender);
 	void load201(Ref *sender);
 	void load202(Ref *sender);
 	void load203(Ref *sender);
+	void load401(Ref *sender);
+	void load402(Ref *sender);
+	void load501(Ref *sender);
+	void load502(Ref *sender);
 	void loadButton(int num);
 };
 

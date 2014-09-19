@@ -1,8 +1,10 @@
 ﻿#include "GameScene2.h"
 #include "GameScene3.h"
 #include "GameScene4.h"
+#include "GameScene5.h"
 #include "GameScene1Obj1.h"
 #include "MenuScene.h"
+#include "game/Dialog.h"
 #include "../Pause/PauseScene.h"
 
 USING_NS_CC;
@@ -28,12 +30,16 @@ bool GameScene3::init()
     
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
+	int m1 = UserDefault::getInstance()->getIntegerForKey("Mission0_complete") ;
 	UserDefault::getInstance()->setIntegerForKey("LASTPLAYED", 3);
 	UserDefault::getInstance()->flush();
 	initBG();
 	initObj1();//복도로 가기.
 	initObj2();//왼쪽
-	initObj3();//왼쪽
+	if(m1 == 1)
+	{
+		initObj3();//오른쪽
+	}
 	initObj4();//엘리베이터
 	//initObj5();//전선 줍기
 	initExit();
@@ -72,7 +78,7 @@ void GameScene3::initObj3()//오른쪽으로 가기
 
 void GameScene3::initObj4()//엘리베이터
 {
-	auto item_1 = MenuItemImage::create("game1/object/bg3_2.png",	"game1/object/bg3_2_on.png", CC_CALLBACK_1(GameScene3::callObj3Content, this));
+	auto item_1 = MenuItemImage::create("game1/object/bg3_2.png",	"game1/object/bg3_2_on.png", CC_CALLBACK_1(GameScene3::callObj4Content, this));
 	item_1->setPosition(480, 425);
 	auto menu_1 = Menu::create(item_1, NULL);
 	menu_1->setPosition(Vec2::ZERO);
@@ -98,12 +104,16 @@ void GameScene3::initExit()
 
 void GameScene3::initBG()
 {
+	int m1 = UserDefault::getInstance()->getIntegerForKey("Mission0_complete") ;
 //	int saved = UserDefault::getInstance()->getIntegerForKey("LASTPLAYED");
 	 Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
 	auto sprite1 = Sprite::create("game1/bg3.png");
-
+	if (m1 == 1)
+	{
+		sprite1 = Sprite::create("game1/bg3-1.png");
+	}
 	sprite1->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
 
 	this->addChild(sprite1, 0);
@@ -119,13 +129,21 @@ void GameScene3::callObj1Content(Ref * pSender)
 //칩을 주워라
 void GameScene3::callObj2Content(Ref * pSender)
 {
-	Director::getInstance()->pushScene(GameScene4::createScene());
+	Director::getInstance()->replaceScene(GameScene4::createScene());
 }
 
 //전선을 주워라
 void GameScene3::callObj3Content(Ref * pSender)
 {
-	Director::getInstance()->pushScene(GameScene1Obj1::createScene());
+	Director::getInstance()->replaceScene(GameScene5::createScene());
+}
+
+void GameScene3::callObj4Content(Ref * pSender)
+{
+	UserDefault::getInstance()->setIntegerForKey("Dialog",20);
+	UserDefault::getInstance()->flush();
+	
+	Director::getInstance()->pushScene(Dialog::createScene());
 }
 
 //일시정지 메뉴 가기

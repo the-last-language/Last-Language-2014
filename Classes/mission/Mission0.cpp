@@ -2,6 +2,7 @@
 #include "MissionDialog.h"
 #include "MenuScene.h"
 #include "KoreanUTF8.h"
+#include "Game/RoomScene0401.h"
 
 USING_NS_CC;
 
@@ -362,7 +363,8 @@ void Mission0::fail(Ref * pSender)
 	UserDefault::getInstance()->flush();
 	UserDefault::getInstance()->setIntegerForKey("mission0", 0);
 	UserDefault::getInstance()->flush();
-	Director::getInstance()->replaceScene(MissionDialog::createScene());
+	Director::getInstance()->replaceScene(RoomScene0401::createScene());
+	Director::getInstance()->pushScene(MissionDialog::createScene());
 	//Director::getInstance()->popScene();
 }
 
@@ -402,7 +404,10 @@ void Mission0::mission0_1_1(Ref* pSender)
 	{
 		UserDefault::getInstance()->setIntegerForKey("mission_result", 1);
 		UserDefault::getInstance()->flush();
-		Director::getInstance()->replaceScene(MissionDialog::createScene());
+		UserDefault::getInstance()->setIntegerForKey("Mission0_complete", 1);
+		UserDefault::getInstance()->flush();
+		Director::getInstance()->replaceScene(RoomScene0401::createScene());
+		Director::getInstance()->pushScene(MissionDialog::createScene());
 	}
 	else
 	{
@@ -418,7 +423,10 @@ void Mission0::mission0_1_2(Ref* pSender)
 	{
 		UserDefault::getInstance()->setIntegerForKey("mission_result", 1);
 		UserDefault::getInstance()->flush();
-		Director::getInstance()->replaceScene(MissionDialog::createScene());
+		UserDefault::getInstance()->setIntegerForKey("Mission0_complete", 1);
+		UserDefault::getInstance()->flush();
+		Director::getInstance()->replaceScene(RoomScene0401::createScene());
+		Director::getInstance()->pushScene(MissionDialog::createScene());
 	}
 	else
 	{
@@ -434,7 +442,10 @@ void Mission0::mission0_1_3(Ref* pSender)
 	{
 		UserDefault::getInstance()->setIntegerForKey("mission_result", 1);
 		UserDefault::getInstance()->flush();
-		Director::getInstance()->replaceScene(MissionDialog::createScene());
+		UserDefault::getInstance()->setIntegerForKey("Mission0_complete", 1);
+		UserDefault::getInstance()->flush();
+		Director::getInstance()->replaceScene(RoomScene0401::createScene());
+		Director::getInstance()->pushScene(MissionDialog::createScene());
 	}
 	else
 	{
@@ -450,7 +461,10 @@ void Mission0::mission0_1_4(Ref* pSender)
 	{
 		UserDefault::getInstance()->setIntegerForKey("mission_result", 1);
 		UserDefault::getInstance()->flush();
-		Director::getInstance()->replaceScene(MissionDialog::createScene());
+		UserDefault::getInstance()->setIntegerForKey("Mission0_complete", 1);
+		UserDefault::getInstance()->flush();
+		Director::getInstance()->replaceScene(RoomScene0401::createScene());
+		Director::getInstance()->pushScene(MissionDialog::createScene());
 	}
 	else
 	{
@@ -466,7 +480,10 @@ void Mission0::mission0_1_5(Ref* pSender)
 	{
 		UserDefault::getInstance()->setIntegerForKey("mission_result", 1);
 		UserDefault::getInstance()->flush();
-		Director::getInstance()->replaceScene(MissionDialog::createScene());
+		UserDefault::getInstance()->setIntegerForKey("Mission0_complete", 1);
+		UserDefault::getInstance()->flush();
+		Director::getInstance()->replaceScene(RoomScene0401::createScene());
+		Director::getInstance()->pushScene(MissionDialog::createScene());
 	}
 	else
 	{
@@ -482,7 +499,10 @@ void Mission0::mission0_1_6(Ref* pSender)
 	{
 		UserDefault::getInstance()->setIntegerForKey("mission_result", 1);
 		UserDefault::getInstance()->flush();
-		Director::getInstance()->replaceScene(MissionDialog::createScene());
+		UserDefault::getInstance()->setIntegerForKey("Mission0_complete", 1);
+		UserDefault::getInstance()->flush();
+		Director::getInstance()->replaceScene(RoomScene0401::createScene());
+		Director::getInstance()->pushScene(MissionDialog::createScene());
 	}
 	else
 	{
@@ -498,7 +518,10 @@ void Mission0::mission0_1_7(Ref* pSender)
 	{
 		UserDefault::getInstance()->setIntegerForKey("mission_result", 1);
 		UserDefault::getInstance()->flush();
-		Director::getInstance()->replaceScene(MissionDialog::createScene());
+		UserDefault::getInstance()->setIntegerForKey("Mission0_complete", 1);
+		UserDefault::getInstance()->flush();
+		Director::getInstance()->replaceScene(RoomScene0401::createScene());
+		Director::getInstance()->pushScene(MissionDialog::createScene());
 	}
 	else
 	{
@@ -514,7 +537,10 @@ void Mission0::mission0_1_8(Ref* pSender)
 	{
 		UserDefault::getInstance()->setIntegerForKey("mission_result", 1);
 		UserDefault::getInstance()->flush();
-		Director::getInstance()->replaceScene(MissionDialog::createScene());
+		UserDefault::getInstance()->setIntegerForKey("Mission0_complete", 1);
+		UserDefault::getInstance()->flush();
+		Director::getInstance()->replaceScene(RoomScene0401::createScene());
+		Director::getInstance()->pushScene(MissionDialog::createScene());
 	}
 	else
 	{
@@ -530,7 +556,10 @@ void Mission0::mission0_1_9(Ref* pSender)
 	{
 		UserDefault::getInstance()->setIntegerForKey("mission_result", 1);
 		UserDefault::getInstance()->flush();
-		Director::getInstance()->replaceScene(MissionDialog::createScene());
+		UserDefault::getInstance()->setIntegerForKey("Mission0_complete", 1);
+		UserDefault::getInstance()->flush();
+		Director::getInstance()->replaceScene(RoomScene0401::createScene());
+		Director::getInstance()->pushScene(MissionDialog::createScene());
 	}
 	else
 	{
@@ -546,7 +575,10 @@ void Mission0::mission0_1_10(Ref* pSender)
 	{
 		UserDefault::getInstance()->setIntegerForKey("mission_result", 1);
 		UserDefault::getInstance()->flush();
-		Director::getInstance()->replaceScene(MissionDialog::createScene());
+		UserDefault::getInstance()->setIntegerForKey("Mission0_complete", 1);
+		UserDefault::getInstance()->flush();
+		Director::getInstance()->replaceScene(RoomScene0401::createScene());
+		Director::getInstance()->pushScene(MissionDialog::createScene());
 	}
 	else
 	{
@@ -582,7 +614,8 @@ void Mission0::menuCloseCallback(Ref* pSender)
 	UserDefault::getInstance()->flush();
 	UserDefault::getInstance()->setIntegerForKey("mission0", 0);
 	UserDefault::getInstance()->flush();
-	Director::getInstance()->popScene();
+	Director::getInstance()->replaceScene(RoomScene0401::createScene());
+	//Director::getInstance()->popScene();
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     exit(0);
 #endif

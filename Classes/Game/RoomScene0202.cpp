@@ -3,6 +3,7 @@
 #include "GameScene1Obj1.h"
 #include "MenuScene.h"
 #include "../Pause/PauseScene.h"
+#include "Dialog.h"
 
 USING_NS_CC;
 
@@ -31,8 +32,8 @@ bool RoomScene0202::init()
 	UserDefault::getInstance()->flush();
 	initBG();
 	initObj1();//복도로 나가기
-	initObj2();//가운데 서랍장
-	initObj3();//왼쪽 침대
+	initObj2();//가운데 서랍장 = 칩
+	initObj3();//왼쪽 침대 = 전선
 	initExit();
 
     
@@ -96,10 +97,10 @@ void RoomScene0202::initObj2()//가운데 서랍장
 
 void RoomScene0202::initObj3()//왼쪽 침대.
 {
-	auto item_2 = MenuItemImage::create("game1/object/room0202_1.png", "game1/object/room0202_1_on.png", CC_CALLBACK_1(RoomScene0202::callObj2Content, this));
+	auto item_2 = MenuItemImage::create("game1/object/room0202_1.png", "game1/object/room0202_1_on.png", CC_CALLBACK_1(RoomScene0202::callObj3Content, this));
 	if(UserDefault::getInstance()->getIntegerForKey("item_room0202_1") == 1)
 	{
-		item_2 = MenuItemImage::create("game1/object/room0202_0.png", "game1/object/room0202_0.png", CC_CALLBACK_1(RoomScene0202::nothing, this));
+		item_2 = MenuItemImage::create("game1/object/room0202_1.png", "game1/object/room0202_1.png", CC_CALLBACK_1(RoomScene0202::nothing, this));
 	}
 	item_2->setPosition(195, 640-455);
 	auto menu_2 = Menu::create(item_2, NULL);
@@ -113,17 +114,34 @@ void RoomScene0202::callObj1Content(Ref * pSender)
 {
 	Director::getInstance()->replaceScene(GameScene2::createScene());
 }
-void RoomScene0202::callObj2Content(Ref * pSender)
+void RoomScene0202::callObj2Content(Ref * pSender)//가운데 서랍장 = 칩
 {
+	UserDefault::getInstance()->setIntegerForKey("Dialog", 5);
+	UserDefault::getInstance()->flush();
+	
 	UserDefault::getInstance()->setIntegerForKey("item_room0202_0", 1);
 	UserDefault::getInstance()->flush();
+	UserDefault::getInstance()->setIntegerForKey("chip_003", 1);
+	UserDefault::getInstance()->flush();
+	UserDefault::getInstance()->setIntegerForKey("chip_004", 1);
+	UserDefault::getInstance()->flush();
 	Director::getInstance()->replaceScene(RoomScene0202::createScene());
+	Director::getInstance()->pushScene(Dialog::createScene());
 }
-void RoomScene0202::callObj3Content(Ref * pSender)
+void RoomScene0202::callObj3Content(Ref * pSender)//침대 = 전선
 {
+	int wires = UserDefault::getInstance()->getIntegerForKey("item_wire1");
+	UserDefault::getInstance()->setIntegerForKey("Dialog", 6);
+	UserDefault::getInstance()->flush();
+	
+	
+	wires += 3;
+	UserDefault::getInstance()->setIntegerForKey("item_wire1", wires);
+	UserDefault::getInstance()->flush();
 	UserDefault::getInstance()->setIntegerForKey("item_room0202_1", 1);
 	UserDefault::getInstance()->flush();
 	Director::getInstance()->replaceScene(RoomScene0202::createScene());
+	Director::getInstance()->pushScene(Dialog::createScene());
 }
 
 void RoomScene0202::nothing(Ref* pSender)

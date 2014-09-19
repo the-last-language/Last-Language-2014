@@ -3,6 +3,9 @@
 #include "GameScene1Obj1.h"
 #include "MenuScene.h"
 #include "../Pause/PauseScene.h"
+#include "RoomScene0401.h"
+#include "RoomScene0402.h"
+#include "Game/Dialog.h"
 
 USING_NS_CC;
 
@@ -33,7 +36,7 @@ bool GameScene4::init()
 	initObj1();//복도로 가기.
 	initObj2();//왼쪽
 	initObj3();//왼쪽
-	initObj4();//엘리베이터
+	initObj4();//탄약창고
 	//initObj5();//전선 줍기
 	initExit();
 
@@ -51,7 +54,7 @@ void GameScene4::initObj1()//중앙홀로 가기
 	this->addChild(menu_1); 
 }
 
-void GameScene4::initObj2()//미니게임방.
+void GameScene4::initObj2()//TV방.
 {
 	auto item_2 = MenuItemImage::create("game1/object/bg4_0.png", "game1/object/bg4_0_on.png", CC_CALLBACK_1(GameScene4::callObj2Content, this));
 	item_2->setPosition(105, 640-370);
@@ -69,9 +72,9 @@ void GameScene4::initObj3()//유류창고로
 	this->addChild(menu_1); 
 }
 
-void GameScene4::initObj4()//잡템줍는방
+void GameScene4::initObj4()//탄약창고(미니게임)
 {
-	auto item_1 = MenuItemImage::create("game1/object/bg4_2.png",	"game1/object/bg4_2_on.png", CC_CALLBACK_1(GameScene4::callObj3Content, this));
+	auto item_1 = MenuItemImage::create("game1/object/bg4_2.png",	"game1/object/bg4_2_on.png", CC_CALLBACK_1(GameScene4::callObj4Content, this));
 	item_1->setPosition(860, 640-370);
 	auto menu_1 = Menu::create(item_1, NULL);
 	menu_1->setPosition(Vec2::ZERO);
@@ -115,16 +118,25 @@ void GameScene4::callObj1Content(Ref * pSender)
 	Director::getInstance()->replaceScene(GameScene3::createScene());
 }
 
-//칩을 주워라
+//TV방
 void GameScene4::callObj2Content(Ref * pSender)
 {
-	Director::getInstance()->pushScene(GameScene1Obj1::createScene());
+	Director::getInstance()->pushScene(RoomScene0402::createScene());
 }
 
-//전선을 주워라
+
 void GameScene4::callObj3Content(Ref * pSender)
 {
-	Director::getInstance()->pushScene(GameScene1Obj1::createScene());
+	UserDefault::getInstance()->setIntegerForKey("Dialog", 16);
+	UserDefault::getInstance()->flush();
+	
+	Director::getInstance()->pushScene(Dialog::createScene());
+	//Director::getInstance()->pushScene(GameScene1Obj1::createScene());
+}
+//탄약창고(미니게임)
+void GameScene4::callObj4Content(Ref * pSender)
+{
+	Director::getInstance()->replaceScene(RoomScene0401::createScene());
 }
 
 //일시정지 메뉴 가기

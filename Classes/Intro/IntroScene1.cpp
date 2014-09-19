@@ -86,14 +86,28 @@ void IntroScene1::initAllDefaults()
 	UserDefault::getInstance()->flush();
 	UserDefault::getInstance()->setIntegerForKey("item_room0202_1", 0);
 	UserDefault::getInstance()->flush();
-	UserDefault::getInstance()->setIntegerForKey("chip_001", 0);
+	UserDefault::getInstance()->setIntegerForKey("item_room0203_0", 0);
 	UserDefault::getInstance()->flush();
-	UserDefault::getInstance()->setIntegerForKey("chip_002", 0);
+	UserDefault::getInstance()->setIntegerForKey("item_room0203_1", 0);
 	UserDefault::getInstance()->flush();
+	UserDefault::getInstance()->setIntegerForKey("item_room0401_1", 0);
+	UserDefault::getInstance()->flush();
+	UserDefault::getInstance()->setIntegerForKey("item_room0501_1", 0);
+	UserDefault::getInstance()->flush();
+	UserDefault::getInstance()->setIntegerForKey("item_room0502_0", 0);
+	UserDefault::getInstance()->flush();
+	UserDefault::getInstance()->setIntegerForKey("item_room0502_1", 0);
+	UserDefault::getInstance()->flush();
+	UserDefault::getInstance()->setIntegerForKey("item_bg5_0", 0);
+	UserDefault::getInstance()->flush();
+	
 
 	UserDefault::getInstance()->setIntegerForKey("mission0", 0);
 	UserDefault::getInstance()->flush();
-
+	UserDefault::getInstance()->setIntegerForKey("Mission0_complete", 0);
+	UserDefault::getInstance()->flush();
+	UserDefault::getInstance()->setIntegerForKey("Mission1_complete", 0);
+	UserDefault::getInstance()->flush();
 	UserDefault::getInstance()->setIntegerForKey("Mission1", 0);
 	UserDefault::getInstance()->flush();
 
@@ -132,6 +146,32 @@ void IntroScene1::initAllDefaults()
 		UserDefault::getInstance()->flush();
 		UserDefault::getInstance()->setIntegerForKey("m16", 0);
 		UserDefault::getInstance()->flush();
+
+		UserDefault::getInstance()->setIntegerForKey("chip_001", 0);
+		UserDefault::getInstance()->setIntegerForKey("chip_002", 0);
+		UserDefault::getInstance()->setIntegerForKey("chip_003", 0);
+		UserDefault::getInstance()->setIntegerForKey("chip_004", 0);
+		UserDefault::getInstance()->setIntegerForKey("chip_005", 0);
+		UserDefault::getInstance()->setIntegerForKey("chip_006", 0);
+		UserDefault::getInstance()->setIntegerForKey("chip_007", 0);
+		UserDefault::getInstance()->setIntegerForKey("chip_008", 0);
+		UserDefault::getInstance()->setIntegerForKey("chip_009", 0);
+		UserDefault::getInstance()->setIntegerForKey("chip_010", 0);
+		UserDefault::getInstance()->setIntegerForKey("chip_011", 0);
+		UserDefault::getInstance()->setIntegerForKey("chip_012", 0);
+		UserDefault::getInstance()->setIntegerForKey("chip_013", 0);
+		UserDefault::getInstance()->setIntegerForKey("chip_014", 0);
+		UserDefault::getInstance()->setIntegerForKey("chip_now", 0);
+		UserDefault::getInstance()->flush();
+
+		UserDefault::getInstance()->setIntegerForKey("slot_01_now", 0);
+		UserDefault::getInstance()->setIntegerForKey("slot_02_now", 0);
+		UserDefault::getInstance()->setIntegerForKey("slot_03_now", 0);
+		UserDefault::getInstance()->setIntegerForKey("slot_04_now", 0);
+		UserDefault::getInstance()->setIntegerForKey("slot_05_now", 0);
+		UserDefault::getInstance()->setIntegerForKey("slot_06_now", 0);
+		UserDefault::getInstance()->flush();
+
 }
 
 

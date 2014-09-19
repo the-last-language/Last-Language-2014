@@ -3,6 +3,7 @@
 #include "GameScene1Obj1.h"
 #include "MenuScene.h"
 #include "../Pause/PauseScene.h"
+#include "Dialog.h"
 
 USING_NS_CC;
 
@@ -31,8 +32,8 @@ bool RoomScene0203::init()
 	UserDefault::getInstance()->flush();
 	initBG();
 	initObj1();//복도로 나가기
-	initObj2();//왼쪽 관물대
-	initObj3();//총기
+	initObj2();//왼쪽 관물대-전선.
+	initObj3();//총기-단어칩
 	initExit();
 
     
@@ -86,29 +87,45 @@ void RoomScene0203::callObj1Content(Ref * pSender)
 {
 	Director::getInstance()->replaceScene(GameScene2::createScene());
 }
-void RoomScene0203::callObj2Content(Ref * pSender)
+void RoomScene0203::callObj2Content(Ref * pSender)//왼쪽 관물대-전선
 {
+	int wires = UserDefault::getInstance()->getIntegerForKey("item_wire1");
+	UserDefault::getInstance()->setIntegerForKey("Dialog", 7);
+	UserDefault::getInstance()->flush();
+	
+	wires += 1;
+	UserDefault::getInstance()->setIntegerForKey("item_wire1", wires);
+	UserDefault::getInstance()->flush();
 	UserDefault::getInstance()->setIntegerForKey("item_room0203_0", 1);
 	UserDefault::getInstance()->flush();
 	Director::getInstance()->replaceScene(RoomScene0203::createScene());
+	Director::getInstance()->pushScene(Dialog::createScene());
 }
-void RoomScene0203::callObj3Content(Ref * pSender)
+void RoomScene0203::callObj3Content(Ref * pSender)//총기걸이-단어칩
 {
+	UserDefault::getInstance()->setIntegerForKey("Dialog", 8);
+	UserDefault::getInstance()->flush();
+	
+	UserDefault::getInstance()->setIntegerForKey("chip_005", 1);
+	UserDefault::getInstance()->flush();
+	UserDefault::getInstance()->setIntegerForKey("chip_006", 1);
+	UserDefault::getInstance()->flush();
 	UserDefault::getInstance()->setIntegerForKey("item_room0203_1", 1);
 	UserDefault::getInstance()->flush();
 	Director::getInstance()->replaceScene(RoomScene0203::createScene());
+	Director::getInstance()->pushScene(Dialog::createScene());
 }
 
 void RoomScene0203::nothing(Ref* pSender)
 {
 }
 
-void RoomScene0203::initObj2()//왼쪽 관물대
+void RoomScene0203::initObj2()//왼쪽 관물대 - 전선.
 {
 	auto item_1 = MenuItemImage::create("game1/object/room0203_0.png", "game1/object/room0203_0_on.png", CC_CALLBACK_1(RoomScene0203::callObj2Content, this));
 	if(UserDefault::getInstance()->getIntegerForKey("item_room0203_0") == 1)
 	{
-		item_1 = MenuItemImage::create("game1/object/room0202_0.png", "game1/object/room0202_0.png", CC_CALLBACK_1(RoomScene0203::nothing, this));
+		item_1 = MenuItemImage::create("game1/object/room0203_0.png", "game1/object/room0203_0.png", CC_CALLBACK_1(RoomScene0203::nothing, this));
 	}
 	item_1->setPosition(60, 640-270);
 	auto menu_1 = Menu::create(item_1, NULL);
@@ -116,12 +133,12 @@ void RoomScene0203::initObj2()//왼쪽 관물대
 	this->addChild(menu_1); 
 }
 
-void RoomScene0203::initObj3()//총기걸이.
+void RoomScene0203::initObj3()//총기걸이. - 단어칩
 {
 	auto item_2 = MenuItemImage::create("game1/object/room0203_1.png", "game1/object/room0203_1_on.png", CC_CALLBACK_1(RoomScene0203::callObj3Content, this));
 	if(UserDefault::getInstance()->getIntegerForKey("item_room0203_1") == 1)
 	{
-		item_2 = MenuItemImage::create("game1/object/room0202_0.png", "game1/object/room0202_0.png", CC_CALLBACK_1(RoomScene0203::nothing, this));
+		item_2 = MenuItemImage::create("game1/object/room0203_1.png", "game1/object/room0203_1.png", CC_CALLBACK_1(RoomScene0203::nothing, this));
 	}
 	item_2->setPosition(270, 640-315);
 	auto menu_2 = Menu::create(item_2, NULL);

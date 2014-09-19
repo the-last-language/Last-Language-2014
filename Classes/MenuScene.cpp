@@ -3,6 +3,7 @@
 #include "AllScene.h"
 #include "Game/GameScene4.h"
 #include "mission/Mission1.h"
+#include "mission/Mission2.h"
 USING_NS_CC;
 
 
@@ -90,8 +91,8 @@ void MenuScene::startScene(Ref* Sender)
 
 void MenuScene::aboutScene(Ref* Sender)
 {
-	//Director::getInstance()->replaceScene(AboutScene::createScene());
-	Director::getInstance()->replaceScene(Mission1::createScene());
+	Director::getInstance()->replaceScene(AboutScene::createScene());
+	//Director::getInstance()->replaceScene(Mission2::createScene());
 }
 
 
@@ -121,6 +122,11 @@ void MenuScene::load4(Ref* Sender)
 
 	Director::getInstance()->replaceScene(GameScene4::createScene());
 }
+void MenuScene::load5(Ref* Sender)
+{
+
+	Director::getInstance()->replaceScene(GameScene5::createScene());
+}
 void MenuScene::load201(Ref* Sender)
 {
 
@@ -137,7 +143,26 @@ void MenuScene::load203(Ref* Sender)
 	Director::getInstance()->replaceScene(RoomScene0203::createScene());
 }
 
+void MenuScene::load401(Ref* Sender)
+{
 
+	Director::getInstance()->replaceScene(RoomScene0401::createScene());
+}
+void MenuScene::load402(Ref* Sender)
+{
+
+	Director::getInstance()->replaceScene(RoomScene0402::createScene());
+}
+void MenuScene::load501(Ref* Sender)
+{
+
+	Director::getInstance()->replaceScene(RoomScene0501::createScene());
+}
+void MenuScene::load502(Ref* Sender)
+{
+
+	Director::getInstance()->replaceScene(RoomScene0502::createScene());
+}
 
 void MenuScene::loadButton(int num)
 {
@@ -173,6 +198,13 @@ void MenuScene::loadButton(int num)
 			menu_2->setPosition(Vec2::ZERO);
 			this->addChild(menu_2);
 			break;
+		case 5:
+			item_2 =MenuItemImage::create("btn2.png", "btn2_on.png", CC_CALLBACK_1(MenuScene::load5, this));
+			item_2->setPosition(800, 240);
+			menu_2 = Menu::create(item_2, NULL);
+			menu_2->setPosition(Vec2::ZERO);
+			this->addChild(menu_2);
+			break;
 		case 201:
 			item_2 =MenuItemImage::create("btn2.png", "btn2_on.png", CC_CALLBACK_1(MenuScene::load201, this));
 			item_2->setPosition(800, 240);
@@ -189,6 +221,34 @@ void MenuScene::loadButton(int num)
 			break;
 		case 203:
 			item_2 =MenuItemImage::create("btn2.png", "btn2_on.png", CC_CALLBACK_1(MenuScene::load203, this));
+			item_2->setPosition(800, 240);
+			menu_2 = Menu::create(item_2, NULL);
+			menu_2->setPosition(Vec2::ZERO);
+			this->addChild(menu_2);
+			break;
+		case 401:
+			item_2 =MenuItemImage::create("btn2.png", "btn2_on.png", CC_CALLBACK_1(MenuScene::load401, this));
+			item_2->setPosition(800, 240);
+			menu_2 = Menu::create(item_2, NULL);
+			menu_2->setPosition(Vec2::ZERO);
+			this->addChild(menu_2);
+			break;
+		case 402:
+			item_2 =MenuItemImage::create("btn2.png", "btn2_on.png", CC_CALLBACK_1(MenuScene::load402, this));
+			item_2->setPosition(800, 240);
+			menu_2 = Menu::create(item_2, NULL);
+			menu_2->setPosition(Vec2::ZERO);
+			this->addChild(menu_2);
+			break;
+		case 501:
+			item_2 =MenuItemImage::create("btn2.png", "btn2_on.png", CC_CALLBACK_1(MenuScene::load501, this));
+			item_2->setPosition(800, 240);
+			menu_2 = Menu::create(item_2, NULL);
+			menu_2->setPosition(Vec2::ZERO);
+			this->addChild(menu_2);
+			break;
+		case 502:
+			item_2 =MenuItemImage::create("btn2.png", "btn2_on.png", CC_CALLBACK_1(MenuScene::load502, this));
 			item_2->setPosition(800, 240);
 			menu_2 = Menu::create(item_2, NULL);
 			menu_2->setPosition(Vec2::ZERO);

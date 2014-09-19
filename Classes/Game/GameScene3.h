@@ -17,7 +17,7 @@ public:
 	void callObj1Content(cocos2d::Ref* pSender);
     void callObj2Content(cocos2d::Ref* pSender);
 	void callObj3Content(cocos2d::Ref* pSender);
-
+	void callObj4Content(cocos2d::Ref* pSender);
 
 	void initBG();
 	void initExit();

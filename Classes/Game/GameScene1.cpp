@@ -141,6 +141,7 @@ void GameScene1::callObj3Content(Ref * pSender)
 	
 
 	int wires = UserDefault::getInstance()->getIntegerForKey("item_wire1");
+
 	UserDefault::getInstance()->setIntegerForKey("item_bg0_002", 1);
 	UserDefault::getInstance()->flush();
 	wires += 2;

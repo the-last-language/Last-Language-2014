@@ -75,13 +75,25 @@ void BagScene::chipInit()
 
 	int chip001 = UserDefault::getInstance()->getIntegerForKey("chip_001");
 	int chip002 = UserDefault::getInstance()->getIntegerForKey("chip_002");
+	int chip003 = UserDefault::getInstance()->getIntegerForKey("chip_003");
+	int chip004 = UserDefault::getInstance()->getIntegerForKey("chip_004");
+	int chip005 = UserDefault::getInstance()->getIntegerForKey("chip_005");
+	int chip006 = UserDefault::getInstance()->getIntegerForKey("chip_006");
+	int chip007 = UserDefault::getInstance()->getIntegerForKey("chip_007");
+	int chip008 = UserDefault::getInstance()->getIntegerForKey("chip_008");
+	int chip009 = UserDefault::getInstance()->getIntegerForKey("chip_009");
+	int chip010 = UserDefault::getInstance()->getIntegerForKey("chip_010");
+	int chip011 = UserDefault::getInstance()->getIntegerForKey("chip_011");
+	int chip012 = UserDefault::getInstance()->getIntegerForKey("chip_012");
+	int chip013 = UserDefault::getInstance()->getIntegerForKey("chip_013");
+	int chip014 = UserDefault::getInstance()->getIntegerForKey("chip_014");
 	
 
 	if(chip001 != 0)
 	{
 		auto sprite001 = Sprite::create("pause/bag/001.png");
 
-		sprite001->setPosition(90, 640-180);
+		sprite001->setPosition(150, 640-180);
 
 		this->addChild(sprite001, 1);
 	}
@@ -89,9 +101,108 @@ void BagScene::chipInit()
 	{
 		auto sprite002 = Sprite::create("pause/bag/002.png");
 
-		sprite002->setPosition(250, 640-180);
+		sprite002->setPosition(310, 640-180);
 
 		this->addChild(sprite002, 1);
 	}
+	if(chip003 != 0)
+	{
+		auto sprite003 = Sprite::create("pause/bag/003.png");
 
+		sprite003->setPosition(470, 640-180);
+
+		this->addChild(sprite003, 1);
+	}
+	if(chip004 != 0)
+	{
+		auto sprite004 = Sprite::create("pause/bag/004.png");
+
+		sprite004->setPosition(630, 640-180);
+
+		this->addChild(sprite004, 1);
+	}
+
+
+	if(chip005 != 0)
+	{
+		auto sprite005 = Sprite::create("pause/bag/005.png");
+
+		sprite005->setPosition(150, 640-230);
+
+		this->addChild(sprite005, 1);
+	}
+	if(chip006 != 0)
+	{
+		auto sprite006 = Sprite::create("pause/bag/006.png");
+
+		sprite006->setPosition(310, 640-230);
+
+		this->addChild(sprite006, 1);
+	}
+	if(chip007 != 0)
+	{
+		auto sprite007 = Sprite::create("pause/bag/007.png");
+
+		sprite007->setPosition(470, 640-230);
+
+		this->addChild(sprite007, 1);
+	}
+	if(chip008 != 0)
+	{
+		auto sprite008 = Sprite::create("pause/bag/008.png");
+
+		sprite008->setPosition(630, 640-230);
+
+		this->addChild(sprite008, 1);
+	}
+
+	if(chip009 != 0)
+	{
+		auto sprite009 = Sprite::create("pause/bag/009.png");
+
+		sprite009->setPosition(150, 640-280);
+
+		this->addChild(sprite009, 1);
+	}
+	if(chip010 != 0)
+	{
+		auto sprite010 = Sprite::create("pause/bag/010.png");
+
+		sprite010->setPosition(310, 640-280);
+
+		this->addChild(sprite010, 1);
+	}
+	if(chip011 != 0)
+	{
+		auto sprite011 = Sprite::create("pause/bag/011.png");
+
+		sprite011->setPosition(470, 640-280);
+
+		this->addChild(sprite011, 1);
+	}
+	if(chip012 != 0)
+	{
+		auto sprite012 = Sprite::create("pause/bag/012.png");
+
+		sprite012->setPosition(630, 640-280);
+
+		this->addChild(sprite012, 1);
+	}
+
+	if(chip013 != 0)
+	{
+		auto sprite013= Sprite::create("pause/bag/013.png");
+
+		sprite013->setPosition(150, 640-330);
+
+		this->addChild(sprite013, 1);
+	}
+	if(chip014 != 0)
+	{
+		auto sprite014 = Sprite::create("pause/bag/014.png");
+
+		sprite014->setPosition(310, 640-330);
+
+		this->addChild(sprite014, 1);
+	}
 }
