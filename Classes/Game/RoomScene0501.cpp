@@ -44,7 +44,7 @@ bool RoomScene0501::init()
 
 void RoomScene0501::initObj1()//복도로 나가기
 {
-	auto item_1 = MenuItemImage::create("game1/object/back.png", "game1/object/back_on.png", CC_CALLBACK_1(RoomScene0501::callObj1Content, this));
+	auto item_1 = MenuItemImage::create("data/game1/object/back.png", "data/game1/object/back_on.png", CC_CALLBACK_1(RoomScene0501::callObj1Content, this));
 	item_1->setPosition(480, 40);
 	auto menu_1 = Menu::create(item_1, NULL);
 	menu_1->setPosition(Vec2::ZERO);
@@ -54,10 +54,10 @@ void RoomScene0501::initObj1()//복도로 나가기
 void RoomScene0501::initObj2()//미니게임. Mission1
 {
 	int r = UserDefault::getInstance()->getIntegerForKey("Mission1_complete") ;
-	auto item_1 = MenuItemImage::create("game1/object/room0501_0.png", "game1/object/room0501_0_on.png", CC_CALLBACK_1(RoomScene0501::callObj2Content, this));
+	auto item_1 = MenuItemImage::create("data/game1/object/room0501_0.png", "data/game1/object/room0501_0_on.png", CC_CALLBACK_1(RoomScene0501::callObj2Content, this));
 	if(r== 1)
 	{
-		item_1 = MenuItemImage::create("game1/object/room0501_0.png", "game1/object/room0501_0.png", CC_CALLBACK_1(RoomScene0501::nothing, this));
+		item_1 = MenuItemImage::create("data/game1/object/room0501_0.png", "data/game1/object/room0501_0.png", CC_CALLBACK_1(RoomScene0501::nothing, this));
 	}
 	item_1->setPosition(255, 640-300);
 	auto menu_1 = Menu::create(item_1, NULL);
@@ -68,7 +68,7 @@ void RoomScene0501::initObj2()//미니게임. Mission1
 void RoomScene0501::initObj3()//대화이벤트.
 {
 
-	auto item_1 = MenuItemImage::create("game1/object/room0501_0.png", "game1/object/room0501_0_on.png", CC_CALLBACK_1(RoomScene0501::callObj3Content, this));
+	auto item_1 = MenuItemImage::create("data/game1/object/room0501_0.png", "data/game1/object/room0501_0_on.png", CC_CALLBACK_1(RoomScene0501::callObj3Content, this));
 	item_1->setPosition(565, 640-380);
 	auto menu_1 = Menu::create(item_1, NULL);
 	menu_1->setPosition(Vec2::ZERO);
@@ -78,10 +78,10 @@ void RoomScene0501::initObj3()//대화이벤트.
 void RoomScene0501::initObj4()//전선을 얻는다.
 {
 	int r = UserDefault::getInstance()->getIntegerForKey("item_room0501_1") ;
-	auto item_1 = MenuItemImage::create("game1/object/room0501_1.png", "game1/object/room0501_1_on.png", CC_CALLBACK_1(RoomScene0501::callObj4Content, this));
+	auto item_1 = MenuItemImage::create("data/game1/object/room0501_1.png", "data/game1/object/room0501_1_on.png", CC_CALLBACK_1(RoomScene0501::callObj4Content, this));
 	if(r== 1)
 	{
-		item_1 = MenuItemImage::create("game1/object/room0501_1.png", "game1/object/room0501_1.png", CC_CALLBACK_1(RoomScene0501::nothing, this));
+		item_1 = MenuItemImage::create("data/game1/object/room0501_1.png", "data/game1/object/room0501_1.png", CC_CALLBACK_1(RoomScene0501::nothing, this));
 	}
 	item_1->setPosition(875, 640-580);
 	auto menu_1 = Menu::create(item_1, NULL);
@@ -95,8 +95,8 @@ void RoomScene0501::initExit()
  Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 	auto closeItem = MenuItemImage::create(
-                                           "CloseNormal.png",
-                                           "CloseSelected.png",
+                                           "data/CloseNormal.png",
+                                           "data/CloseSelected.png",
 										   CC_CALLBACK_1(RoomScene0501::menuCloseCallback, this));
     
 	closeItem->setPosition(Vec2(origin.x + visibleSize.width - closeItem->getContentSize().width/2 ,
@@ -113,7 +113,7 @@ void RoomScene0501::initBG()
 	 Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	auto sprite1 = Sprite::create("game1/bg5-1.png");
+	auto sprite1 = Sprite::create("data/game1/bg5-1.png");
 
 	sprite1->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
 

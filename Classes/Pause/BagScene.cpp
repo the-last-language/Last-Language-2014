@@ -27,7 +27,7 @@ bool BagScene::init()
 	int saved = UserDefault::getInstance()->getIntegerForKey("LASTPLAYED");
 
 
-	auto sprite = Sprite::create("pause/PauseMenu.png");
+	auto sprite = Sprite::create("data/pause/PauseMenu.png");
 
 	sprite->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
 
@@ -35,7 +35,7 @@ bool BagScene::init()
 
 
 	//돌아가기
-	auto item_1 = MenuItemImage::create("pause/bag/back.png",	"pause/bag/back_on.png", CC_CALLBACK_1(BagScene::goBack, this));
+	auto item_1 = MenuItemImage::create("data/pause/bag/back.png",	"data/pause/bag/back_on.png", CC_CALLBACK_1(BagScene::goBack, this));
 	item_1->setPosition(840, 640-70);
 	auto menu_1 = Menu::create(item_1, NULL);
 	menu_1->setPosition(Vec2::ZERO);
@@ -58,18 +58,18 @@ void BagScene::wireInit()
 {
 	std::string wires = UserDefault::getInstance()->getStringForKey("item_wire1");
 
-	auto label_wire = Label::createWithTTF((UTF8("사용가능한 전선의 수 : ")),"fonts/GodoB.ttf",30);
+	auto label_wire = Label::createWithTTF((UTF8("사용가능한 전선의 수 : ")),"data/fonts/GodoB.ttf",30);
 	label_wire->setPosition(Point(180,640-65));
 	this->addChild(label_wire);
 
-	auto label_wire_cnt = Label::createWithTTF((UTF8(wires.c_str())),"fonts/GodoB.ttf",30);
+	auto label_wire_cnt = Label::createWithTTF((UTF8(wires.c_str())),"data/fonts/GodoB.ttf",30);
 	label_wire_cnt->setPosition(Point(350,640-65));
 	this->addChild(label_wire_cnt);
 }
 
 void BagScene::chipInit()
 {
-	auto label_chip = Label::createWithTTF(UTF8("#현재까지 수집한 칩"),"fonts/GodoB.ttf",30);
+	auto label_chip = Label::createWithTTF(UTF8("#현재까지 수집한 칩"),"data/fonts/GodoB.ttf",30);
 	label_chip->setPosition(Point(160,640-120));
 	this->addChild(label_chip);
 
@@ -91,7 +91,7 @@ void BagScene::chipInit()
 
 	if(chip001 != 0)
 	{
-		auto sprite001 = Sprite::create("pause/bag/001.png");
+		auto sprite001 = Sprite::create("data/pause/bag/001.png");
 
 		sprite001->setPosition(150, 640-180);
 
@@ -99,7 +99,7 @@ void BagScene::chipInit()
 	}
 	if(chip002 != 0)
 	{
-		auto sprite002 = Sprite::create("pause/bag/002.png");
+		auto sprite002 = Sprite::create("data/pause/bag/002.png");
 
 		sprite002->setPosition(310, 640-180);
 
@@ -107,7 +107,7 @@ void BagScene::chipInit()
 	}
 	if(chip003 != 0)
 	{
-		auto sprite003 = Sprite::create("pause/bag/003.png");
+		auto sprite003 = Sprite::create("data/pause/bag/003.png");
 
 		sprite003->setPosition(470, 640-180);
 
@@ -115,7 +115,7 @@ void BagScene::chipInit()
 	}
 	if(chip004 != 0)
 	{
-		auto sprite004 = Sprite::create("pause/bag/004.png");
+		auto sprite004 = Sprite::create("data/pause/bag/004.png");
 
 		sprite004->setPosition(630, 640-180);
 
@@ -125,7 +125,7 @@ void BagScene::chipInit()
 
 	if(chip005 != 0)
 	{
-		auto sprite005 = Sprite::create("pause/bag/005.png");
+		auto sprite005 = Sprite::create("data/pause/bag/005.png");
 
 		sprite005->setPosition(150, 640-230);
 
@@ -133,7 +133,7 @@ void BagScene::chipInit()
 	}
 	if(chip006 != 0)
 	{
-		auto sprite006 = Sprite::create("pause/bag/006.png");
+		auto sprite006 = Sprite::create("data/pause/bag/006.png");
 
 		sprite006->setPosition(310, 640-230);
 
@@ -141,7 +141,7 @@ void BagScene::chipInit()
 	}
 	if(chip007 != 0)
 	{
-		auto sprite007 = Sprite::create("pause/bag/007.png");
+		auto sprite007 = Sprite::create("data/pause/bag/007.png");
 
 		sprite007->setPosition(470, 640-230);
 
@@ -149,7 +149,7 @@ void BagScene::chipInit()
 	}
 	if(chip008 != 0)
 	{
-		auto sprite008 = Sprite::create("pause/bag/008.png");
+		auto sprite008 = Sprite::create("data/pause/bag/008.png");
 
 		sprite008->setPosition(630, 640-230);
 
@@ -158,7 +158,7 @@ void BagScene::chipInit()
 
 	if(chip009 != 0)
 	{
-		auto sprite009 = Sprite::create("pause/bag/009.png");
+		auto sprite009 = Sprite::create("data/pause/bag/009.png");
 
 		sprite009->setPosition(150, 640-280);
 
@@ -166,7 +166,7 @@ void BagScene::chipInit()
 	}
 	if(chip010 != 0)
 	{
-		auto sprite010 = Sprite::create("pause/bag/010.png");
+		auto sprite010 = Sprite::create("data/pause/bag/010.png");
 
 		sprite010->setPosition(310, 640-280);
 
@@ -174,7 +174,7 @@ void BagScene::chipInit()
 	}
 	if(chip011 != 0)
 	{
-		auto sprite011 = Sprite::create("pause/bag/011.png");
+		auto sprite011 = Sprite::create("data/pause/bag/011.png");
 
 		sprite011->setPosition(470, 640-280);
 
@@ -182,7 +182,7 @@ void BagScene::chipInit()
 	}
 	if(chip012 != 0)
 	{
-		auto sprite012 = Sprite::create("pause/bag/012.png");
+		auto sprite012 = Sprite::create("data/pause/bag/012.png");
 
 		sprite012->setPosition(630, 640-280);
 
@@ -191,7 +191,7 @@ void BagScene::chipInit()
 
 	if(chip013 != 0)
 	{
-		auto sprite013= Sprite::create("pause/bag/013.png");
+		auto sprite013= Sprite::create("data/pause/bag/013.png");
 
 		sprite013->setPosition(150, 640-330);
 
@@ -199,7 +199,7 @@ void BagScene::chipInit()
 	}
 	if(chip014 != 0)
 	{
-		auto sprite014 = Sprite::create("pause/bag/014.png");
+		auto sprite014 = Sprite::create("data/pause/bag/014.png");
 
 		sprite014->setPosition(310, 640-330);
 

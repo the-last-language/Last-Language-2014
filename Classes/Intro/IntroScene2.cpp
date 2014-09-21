@@ -40,7 +40,7 @@ bool IntroScene2::init()
     this->addChild(menu, 1);*/
 
 
-	auto sprite2 = Sprite::create("scene/Scene1.jpg");
+	auto sprite2 = Sprite::create("data/scene/Scene1.jpg");
 
 	sprite2->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
 
@@ -50,13 +50,13 @@ bool IntroScene2::init()
 
 
 	//다음으로 넘기기
-	auto item_1 = MenuItemImage::create("scene/next.png", "scene/next_on.png", CC_CALLBACK_1(IntroScene2::goNext, this));
+	auto item_1 = MenuItemImage::create("data/scene/next.png", "data/scene/next_on.png", CC_CALLBACK_1(IntroScene2::goNext, this));
 	item_1->setPosition(920, 40);
 	auto menu_1 = Menu::create(item_1, NULL);
 	menu_1->setPosition(Vec2::ZERO);
 	this->addChild(menu_1);
 	
-	auto label = Label::createWithTTF(UTF8("이 장치들은 무엇인가."),"fonts/GodoB.ttf",30);
+	auto label = Label::createWithTTF(UTF8("내가 아파서 여기에 누워있었나...\n하기에는 여긴 병원은 아닌거 같다."),"data/fonts/GodoB.ttf",30);
 	label->setPosition(Point(480,100));
 	this->addChild(label);
 	

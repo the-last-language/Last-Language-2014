@@ -44,7 +44,7 @@ bool RoomScene0502::init()
 
 void RoomScene0502::initObj1()//복도로 나가기
 {
-	auto item_1 = MenuItemImage::create("game1/object/back.png", "game1/object/back_on.png", CC_CALLBACK_1(RoomScene0502::callObj1Content, this));
+	auto item_1 = MenuItemImage::create("data/game1/object/back.png", "data/game1/object/back_on.png", CC_CALLBACK_1(RoomScene0502::callObj1Content, this));
 	item_1->setPosition(480, 40);
 	auto menu_1 = Menu::create(item_1, NULL);
 	menu_1->setPosition(Vec2::ZERO);
@@ -54,10 +54,10 @@ void RoomScene0502::initObj1()//복도로 나가기
 void RoomScene0502::initObj2()//사물함
 {
 	int r = UserDefault::getInstance()->getIntegerForKey("item_room0502_0") ;
-	auto item_1 = MenuItemImage::create("game1/object/room0502_0.png", "game1/object/room0502_0_on.png", CC_CALLBACK_1(RoomScene0502::callObj2Content, this));
+	auto item_1 = MenuItemImage::create("data/game1/object/room0502_0.png", "data/game1/object/room0502_0_on.png", CC_CALLBACK_1(RoomScene0502::callObj2Content, this));
 	if(r== 1)
 	{
-		item_1 = MenuItemImage::create("game1/object/room0502_0.png", "game1/object/room0502_0.png", CC_CALLBACK_1(RoomScene0502::nothing, this));
+		item_1 = MenuItemImage::create("data/game1/object/room0502_0.png", "data/game1/object/room0502_0.png", CC_CALLBACK_1(RoomScene0502::nothing, this));
 	}
 	item_1->setPosition(45, 640-380);
 	auto menu_1 = Menu::create(item_1, NULL);
@@ -68,7 +68,7 @@ void RoomScene0502::initObj2()//사물함
 void RoomScene0502::initObj3()//대화이벤트.
 {
 
-	auto item_1 = MenuItemImage::create("game1/object/room0502_1.png", "game1/object/room0502_1_on.png", CC_CALLBACK_1(RoomScene0502::callObj3Content, this));
+	auto item_1 = MenuItemImage::create("data/game1/object/room0502_1.png", "data/game1/object/room0502_1_on.png", CC_CALLBACK_1(RoomScene0502::callObj3Content, this));
 	item_1->setPosition(490, 640-430);
 	auto menu_1 = Menu::create(item_1, NULL);
 	menu_1->setPosition(Vec2::ZERO);
@@ -78,10 +78,10 @@ void RoomScene0502::initObj3()//대화이벤트.
 void RoomScene0502::initObj4()//칩을 얻다..
 {
 	int r = UserDefault::getInstance()->getIntegerForKey("item_room0502_1") ;
-	auto item_1 = MenuItemImage::create("game1/object/room0502_2.png", "game1/object/room0502_2_on.png", CC_CALLBACK_1(RoomScene0502::callObj4Content, this));
+	auto item_1 = MenuItemImage::create("data/game1/object/room0502_2.png", "data/game1/object/room0502_2_on.png", CC_CALLBACK_1(RoomScene0502::callObj4Content, this));
 	if(r== 1)
 	{
-		item_1 = MenuItemImage::create("game1/object/room0502_2.png", "game1/object/room0502_2.png", CC_CALLBACK_1(RoomScene0502::nothing, this));
+		item_1 = MenuItemImage::create("data/game1/object/room0502_2.png", "data/game1/object/room0502_2.png", CC_CALLBACK_1(RoomScene0502::nothing, this));
 	}
 	item_1->setPosition(860, 640-325);
 	auto menu_1 = Menu::create(item_1, NULL);
@@ -95,8 +95,8 @@ void RoomScene0502::initExit()
  Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 	auto closeItem = MenuItemImage::create(
-                                           "CloseNormal.png",
-                                           "CloseSelected.png",
+                                           "data/CloseNormal.png",
+                                           "data/CloseSelected.png",
 										   CC_CALLBACK_1(RoomScene0502::menuCloseCallback, this));
     
 	closeItem->setPosition(Vec2(origin.x + visibleSize.width - closeItem->getContentSize().width/2 ,
@@ -113,7 +113,7 @@ void RoomScene0502::initBG()
 	 Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	auto sprite1 = Sprite::create("game1/bg5-2.png");
+	auto sprite1 = Sprite::create("data/game1/bg5-2.png");
 
 	sprite1->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
 

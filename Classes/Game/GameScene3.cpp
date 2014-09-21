@@ -6,6 +6,8 @@
 #include "MenuScene.h"
 #include "game/Dialog.h"
 #include "../Pause/PauseScene.h"
+#include "Ending/EndScene1.h"
+#include "Ending/EndSceneBad.h"
 
 USING_NS_CC;
 
@@ -51,7 +53,7 @@ bool GameScene3::init()
 
 void GameScene3::initObj1()//복도로 가기
 {
-	auto item_1 = MenuItemImage::create("game1/object/back.png", "game1/object/back_on.png", CC_CALLBACK_1(GameScene3::callObj1Content, this));
+	auto item_1 = MenuItemImage::create("data/game1/object/back.png", "data/game1/object/back_on.png", CC_CALLBACK_1(GameScene3::callObj1Content, this));
 	item_1->setPosition(480, 40);
 	auto menu_1 = Menu::create(item_1, NULL);
 	menu_1->setPosition(Vec2::ZERO);
@@ -60,7 +62,7 @@ void GameScene3::initObj1()//복도로 가기
 
 void GameScene3::initObj2()//왼쪽으로 가기
 {
-	auto item_2 = MenuItemImage::create("game1/object/bg3_0.png", "game1/object/bg3_0_on.png", CC_CALLBACK_1(GameScene3::callObj2Content, this));
+	auto item_2 = MenuItemImage::create("data/game1/object/bg3_0.png", "data/game1/object/bg3_0_on.png", CC_CALLBACK_1(GameScene3::callObj2Content, this));
 	item_2->setPosition(90, 270);
 	auto menu_2 = Menu::create(item_2, NULL);
 	menu_2->setPosition(Vec2::ZERO);
@@ -69,7 +71,7 @@ void GameScene3::initObj2()//왼쪽으로 가기
 
 void GameScene3::initObj3()//오른쪽으로 가기
 {
-	auto item_1 = MenuItemImage::create("game1/object/bg3_1.png",	"game1/object/bg3_1_on.png", CC_CALLBACK_1(GameScene3::callObj3Content, this));
+	auto item_1 = MenuItemImage::create("data/game1/object/bg3_1.png",	"data/game1/object/bg3_1_on.png", CC_CALLBACK_1(GameScene3::callObj3Content, this));
 	item_1->setPosition(890, 280);
 	auto menu_1 = Menu::create(item_1, NULL);
 	menu_1->setPosition(Vec2::ZERO);
@@ -78,7 +80,7 @@ void GameScene3::initObj3()//오른쪽으로 가기
 
 void GameScene3::initObj4()//엘리베이터
 {
-	auto item_1 = MenuItemImage::create("game1/object/bg3_2.png",	"game1/object/bg3_2_on.png", CC_CALLBACK_1(GameScene3::callObj4Content, this));
+	auto item_1 = MenuItemImage::create("data/game1/object/bg3_2.png",	"data/game1/object/bg3_2_on.png", CC_CALLBACK_1(GameScene3::callObj4Content, this));
 	item_1->setPosition(480, 425);
 	auto menu_1 = Menu::create(item_1, NULL);
 	menu_1->setPosition(Vec2::ZERO);
@@ -90,8 +92,8 @@ void GameScene3::initExit()
  Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 	auto closeItem = MenuItemImage::create(
-                                           "CloseNormal.png",
-                                           "CloseSelected.png",
+                                           "data/CloseNormal.png",
+                                           "data/CloseSelected.png",
 										   CC_CALLBACK_1(GameScene3::menuCloseCallback, this));
     
 	closeItem->setPosition(Vec2(origin.x + visibleSize.width - closeItem->getContentSize().width/2 ,
@@ -109,10 +111,10 @@ void GameScene3::initBG()
 	 Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	auto sprite1 = Sprite::create("game1/bg3.png");
+	auto sprite1 = Sprite::create("data/game1/bg3.png");
 	if (m1 == 1)
 	{
-		sprite1 = Sprite::create("game1/bg3-1.png");
+		sprite1 = Sprite::create("data/game1/bg3-1.png");
 	}
 	sprite1->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
 
@@ -140,10 +142,24 @@ void GameScene3::callObj3Content(Ref * pSender)
 
 void GameScene3::callObj4Content(Ref * pSender)
 {
-	UserDefault::getInstance()->setIntegerForKey("Dialog",20);
-	UserDefault::getInstance()->flush();
+	if(UserDefault::getInstance()->getIntegerForKey("Mission2_complete") != 1)
+	{
+		UserDefault::getInstance()->setIntegerForKey("Dialog",20);
+		UserDefault::getInstance()->flush();
 	
-	Director::getInstance()->pushScene(Dialog::createScene());
+		Director::getInstance()->pushScene(Dialog::createScene());
+	}
+	else
+	{
+		if(UserDefault::getInstance()->getIntegerForKey("failcnt") >= 20)
+		{
+			Director::getInstance()->pushScene(EndSceneBad::createScene());
+		}
+		else
+		{
+			Director::getInstance()->pushScene(EndScene1::createScene());
+		}
+	}
 }
 
 //일시정지 메뉴 가기

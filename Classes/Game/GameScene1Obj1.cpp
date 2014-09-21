@@ -26,7 +26,7 @@ bool GameScene1Obj1::init()
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	auto label = Label::createWithTTF(UTF8("Object TEST.\n그냥 일반적인 컴퓨터.\n지금은 고장남.\n아마 접속콘솔로 쓰일듯."),"fonts/GodoB.ttf",30);
+	auto label = Label::createWithTTF(UTF8("Object TEST.\n그냥 일반적인 컴퓨터.\n지금은 고장남.\n아마 접속콘솔로 쓰일듯."),"data/fonts/GodoB.ttf",30);
 	label->setPosition(Point(480,320));
 	this->addChild(label);
     
@@ -40,8 +40,8 @@ void GameScene1Obj1::initCancel()
 	 Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 	auto closeItem = MenuItemImage::create(
-                                           "CloseNormal.png",
-                                           "CloseSelected.png",
+                                           "data/CloseNormal.png",
+                                           "data/CloseSelected.png",
 										   CC_CALLBACK_1(GameScene1Obj1::menuCloseCallback, this));
     
 	closeItem->setPosition(Vec2(origin.x + visibleSize.width - closeItem->getContentSize().width/2 ,

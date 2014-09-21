@@ -1,5 +1,6 @@
 ﻿#include "Mission2.h"
 #include "MissionDialog.h"
+#include "game/RoomScene04Final.h"
 
 USING_NS_CC;
 
@@ -25,7 +26,7 @@ bool Mission2::init()
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	auto sprite = Sprite::create("game1/mission/2_0.png");
+	auto sprite = Sprite::create("data/game1/mission/2_0.png");
 
 	sprite->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
 
@@ -53,53 +54,53 @@ void Mission2::initSlot()
 	int now4 = UserDefault::getInstance()->getIntegerForKey("slot_04_now");
 	int now5 = UserDefault::getInstance()->getIntegerForKey("slot_05_now");
 	int now6 = UserDefault::getInstance()->getIntegerForKey("slot_06_now");
-	auto item_1 = MenuItemImage::create("game1/mission/chips/slot_empty.png",	"game1/mission/chips/slot_on.png", CC_CALLBACK_1(Mission2::s01, this));
+	auto item_1 = MenuItemImage::create("data/game1/mission/chips/slot_empty.png",	"data/game1/mission/chips/slot_on.png", CC_CALLBACK_1(Mission2::s01, this));
 	switch(now1)
 	{
 	case 1:
-		item_1 = MenuItemImage::create("game1/mission/chips/001.png",	"game1/mission/chips/001_on.png", CC_CALLBACK_1(Mission2::s01, this));
+		item_1 = MenuItemImage::create("data/game1/mission/chips/001.png",	"data/game1/mission/chips/001_on.png", CC_CALLBACK_1(Mission2::s01, this));
 		break;
 	case 2:
-		item_1 = MenuItemImage::create("game1/mission/chips/002.png",	"game1/mission/chips/002_on.png", CC_CALLBACK_1(Mission2::s01, this));
+		item_1 = MenuItemImage::create("data/game1/mission/chips/002.png",	"data/game1/mission/chips/002_on.png", CC_CALLBACK_1(Mission2::s01, this));
 		break;
 	case 3:
-		item_1 = MenuItemImage::create("game1/mission/chips/003.png",	"game1/mission/chips/003_on.png", CC_CALLBACK_1(Mission2::s01, this));
+		item_1 = MenuItemImage::create("data/game1/mission/chips/003.png",	"data/game1/mission/chips/003_on.png", CC_CALLBACK_1(Mission2::s01, this));
 		break;
 	case 4:
-		item_1 = MenuItemImage::create("game1/mission/chips/004.png",	"game1/mission/chips/004_on.png", CC_CALLBACK_1(Mission2::s01, this));
+		item_1 = MenuItemImage::create("data/game1/mission/chips/004.png",	"data/game1/mission/chips/004_on.png", CC_CALLBACK_1(Mission2::s01, this));
 		break;
 	case 5:
-		item_1 = MenuItemImage::create("game1/mission/chips/005.png",	"game1/mission/chips/005_on.png", CC_CALLBACK_1(Mission2::s01, this));
+		item_1 = MenuItemImage::create("data/game1/mission/chips/005.png",	"data/game1/mission/chips/005_on.png", CC_CALLBACK_1(Mission2::s01, this));
 		break;
 	case 6:
-		item_1 = MenuItemImage::create("game1/mission/chips/006.png",	"game1/mission/chips/006_on.png", CC_CALLBACK_1(Mission2::s01, this));
+		item_1 = MenuItemImage::create("data/game1/mission/chips/006.png",	"data/game1/mission/chips/006_on.png", CC_CALLBACK_1(Mission2::s01, this));
 		break;
 	case 7:
-		item_1 = MenuItemImage::create("game1/mission/chips/007.png",	"game1/mission/chips/007_on.png", CC_CALLBACK_1(Mission2::s01, this));
+		item_1 = MenuItemImage::create("data/game1/mission/chips/007.png",	"data/game1/mission/chips/007_on.png", CC_CALLBACK_1(Mission2::s01, this));
 		break;
 	case 8:
-		item_1 = MenuItemImage::create("game1/mission/chips/008.png",	"game1/mission/chips/008_on.png", CC_CALLBACK_1(Mission2::s01, this));
+		item_1 = MenuItemImage::create("data/game1/mission/chips/008.png",	"data/game1/mission/chips/008_on.png", CC_CALLBACK_1(Mission2::s01, this));
 		break;
 	case 9:
-		item_1 = MenuItemImage::create("game1/mission/chips/009.png",	"game1/mission/chips/009_on.png", CC_CALLBACK_1(Mission2::s01, this));
+		item_1 = MenuItemImage::create("data/game1/mission/chips/009.png",	"data/game1/mission/chips/009_on.png", CC_CALLBACK_1(Mission2::s01, this));
 		break;
 	case 10:
-		item_1 = MenuItemImage::create("game1/mission/chips/010.png",	"game1/mission/chips/010_on.png", CC_CALLBACK_1(Mission2::s01, this));
+		item_1 = MenuItemImage::create("data/game1/mission/chips/010.png",	"data/game1/mission/chips/010_on.png", CC_CALLBACK_1(Mission2::s01, this));
 		break;
 	case 11:
-		item_1 = MenuItemImage::create("game1/mission/chips/011.png",	"game1/mission/chips/011_on.png", CC_CALLBACK_1(Mission2::s01, this));
+		item_1 = MenuItemImage::create("data/game1/mission/chips/011.png",	"data/game1/mission/chips/011_on.png", CC_CALLBACK_1(Mission2::s01, this));
 		break;
 	case 12:
-		item_1 = MenuItemImage::create("game1/mission/chips/012.png",	"game1/mission/chips/012_on.png", CC_CALLBACK_1(Mission2::s01, this));
+		item_1 = MenuItemImage::create("data/game1/mission/chips/012.png",	"data/game1/mission/chips/012_on.png", CC_CALLBACK_1(Mission2::s01, this));
 		break;
 	case 13:
-		item_1 = MenuItemImage::create("game1/mission/chips/013.png",	"game1/mission/chips/013_on.png", CC_CALLBACK_1(Mission2::s01, this));
+		item_1 = MenuItemImage::create("data/game1/mission/chips/013.png",	"data/game1/mission/chips/013_on.png", CC_CALLBACK_1(Mission2::s01, this));
 		break;
 	case 14:
-		item_1 = MenuItemImage::create("game1/mission/chips/014.png",	"game1/mission/chips/014_on.png", CC_CALLBACK_1(Mission2::s01, this));
+		item_1 = MenuItemImage::create("data/game1/mission/chips/014.png",	"data/game1/mission/chips/014_on.png", CC_CALLBACK_1(Mission2::s01, this));
 		break;
 	default:
-		item_1 = MenuItemImage::create("game1/mission/chips/slot_empty.png",	"game1/mission/chips/slot_on.png", CC_CALLBACK_1(Mission2::s01, this));
+		item_1 = MenuItemImage::create("data/game1/mission/chips/slot_empty.png",	"data/game1/mission/chips/slot_on.png", CC_CALLBACK_1(Mission2::s01, this));
 		break;
 	}
 	item_1->setPosition(277, 640-86);
@@ -107,53 +108,53 @@ void Mission2::initSlot()
 	menu_1->setPosition(Vec2::ZERO);
 	this->addChild(menu_1); 
 
-	auto item_2 = MenuItemImage::create("game1/mission/chips/slot_empty.png",	"game1/mission/chips/slot_on.png", CC_CALLBACK_1(Mission2::s02, this));
+	auto item_2 = MenuItemImage::create("data/game1/mission/chips/slot_empty.png",	"data/game1/mission/chips/slot_on.png", CC_CALLBACK_1(Mission2::s02, this));
 	switch(now2)
 	{
 	case 1:
-		item_2 = MenuItemImage::create("game1/mission/chips/001.png",	"game1/mission/chips/001_on.png", CC_CALLBACK_1(Mission2::s02, this));
+		item_2 = MenuItemImage::create("data/game1/mission/chips/001.png",	"data/game1/mission/chips/001_on.png", CC_CALLBACK_1(Mission2::s02, this));
 		break;
 	case 2:
-		item_2 = MenuItemImage::create("game1/mission/chips/002.png",	"game1/mission/chips/002_on.png", CC_CALLBACK_1(Mission2::s02, this));
+		item_2 = MenuItemImage::create("data/game1/mission/chips/002.png",	"data/game1/mission/chips/002_on.png", CC_CALLBACK_1(Mission2::s02, this));
 		break;
 	case 3:
-		item_2 = MenuItemImage::create("game1/mission/chips/003.png",	"game1/mission/chips/003_on.png", CC_CALLBACK_1(Mission2::s02, this));
+		item_2 = MenuItemImage::create("data/game1/mission/chips/003.png",	"data/game1/mission/chips/003_on.png", CC_CALLBACK_1(Mission2::s02, this));
 		break;
 	case 4:
-		item_2 = MenuItemImage::create("game1/mission/chips/004.png",	"game1/mission/chips/004_on.png", CC_CALLBACK_1(Mission2::s02, this));
+		item_2 = MenuItemImage::create("data/game1/mission/chips/004.png",	"data/game1/mission/chips/004_on.png", CC_CALLBACK_1(Mission2::s02, this));
 		break;
 	case 5:
-		item_2 = MenuItemImage::create("game1/mission/chips/005.png",	"game1/mission/chips/005_on.png", CC_CALLBACK_1(Mission2::s02, this));
+		item_2 = MenuItemImage::create("data/game1/mission/chips/005.png",	"data/game1/mission/chips/005_on.png", CC_CALLBACK_1(Mission2::s02, this));
 		break;
 	case 6:
-		item_2 = MenuItemImage::create("game1/mission/chips/006.png",	"game1/mission/chips/006_on.png", CC_CALLBACK_1(Mission2::s02, this));
+		item_2 = MenuItemImage::create("data/game1/mission/chips/006.png",	"data/game1/mission/chips/006_on.png", CC_CALLBACK_1(Mission2::s02, this));
 		break;
 	case 7:
-		item_2 = MenuItemImage::create("game1/mission/chips/007.png",	"game1/mission/chips/007_on.png", CC_CALLBACK_1(Mission2::s02, this));
+		item_2 = MenuItemImage::create("data/game1/mission/chips/007.png",	"data/game1/mission/chips/007_on.png", CC_CALLBACK_1(Mission2::s02, this));
 		break;
 	case 8:
-		item_2 = MenuItemImage::create("game1/mission/chips/008.png",	"game1/mission/chips/008_on.png", CC_CALLBACK_1(Mission2::s02, this));
+		item_2 = MenuItemImage::create("data/game1/mission/chips/008.png",	"data/game1/mission/chips/008_on.png", CC_CALLBACK_1(Mission2::s02, this));
 		break;
 	case 9:
-		item_2 = MenuItemImage::create("game1/mission/chips/009.png",	"game1/mission/chips/009_on.png", CC_CALLBACK_1(Mission2::s02, this));
+		item_2 = MenuItemImage::create("data/game1/mission/chips/009.png",	"data/game1/mission/chips/009_on.png", CC_CALLBACK_1(Mission2::s02, this));
 		break;
 	case 10:
-		item_2 = MenuItemImage::create("game1/mission/chips/010.png",	"game1/mission/chips/010_on.png", CC_CALLBACK_1(Mission2::s02, this));
+		item_2 = MenuItemImage::create("data/game1/mission/chips/010.png",	"data/game1/mission/chips/010_on.png", CC_CALLBACK_1(Mission2::s02, this));
 		break;
 	case 11:
-		item_2 = MenuItemImage::create("game1/mission/chips/011.png",	"game1/mission/chips/011_on.png", CC_CALLBACK_1(Mission2::s02, this));
+		item_2 = MenuItemImage::create("data/game1/mission/chips/011.png",	"data/game1/mission/chips/011_on.png", CC_CALLBACK_1(Mission2::s02, this));
 		break;
 	case 12:
-		item_2 = MenuItemImage::create("game1/mission/chips/012.png",	"game1/mission/chips/012_on.png", CC_CALLBACK_1(Mission2::s02, this));
+		item_2 = MenuItemImage::create("data/game1/mission/chips/012.png",	"data/game1/mission/chips/012_on.png", CC_CALLBACK_1(Mission2::s02, this));
 		break;
 	case 13:
-		item_2 = MenuItemImage::create("game1/mission/chips/013.png",	"game1/mission/chips/013_on.png", CC_CALLBACK_1(Mission2::s02, this));
+		item_2 = MenuItemImage::create("data/game1/mission/chips/013.png",	"data/game1/mission/chips/013_on.png", CC_CALLBACK_1(Mission2::s02, this));
 		break;
 	case 14:
-		item_2 = MenuItemImage::create("game1/mission/chips/014.png",	"game1/mission/chips/014_on.png", CC_CALLBACK_1(Mission2::s02, this));
+		item_2 = MenuItemImage::create("data/game1/mission/chips/014.png",	"data/game1/mission/chips/014_on.png", CC_CALLBACK_1(Mission2::s02, this));
 		break;
 	default:
-		item_2 = MenuItemImage::create("game1/mission/chips/slot_empty.png",	"game1/mission/chips/slot_on.png", CC_CALLBACK_1(Mission2::s02, this));
+		item_2 = MenuItemImage::create("data/game1/mission/chips/slot_empty.png",	"data/game1/mission/chips/slot_on.png", CC_CALLBACK_1(Mission2::s02, this));
 		break;
 	}
 	item_2->setPosition(476, 640-86);
@@ -161,53 +162,53 @@ void Mission2::initSlot()
 	menu_2->setPosition(Vec2::ZERO);
 	this->addChild(menu_2); 
 
-	auto item_3 = MenuItemImage::create("game1/mission/chips/slot_empty.png",	"game1/mission/chips/slot_on.png", CC_CALLBACK_1(Mission2::s03, this));
+	auto item_3 = MenuItemImage::create("data/game1/mission/chips/slot_empty.png",	"data/game1/mission/chips/slot_on.png", CC_CALLBACK_1(Mission2::s03, this));
 	switch(now3)
 	{
 	case 1:
-		item_3 = MenuItemImage::create("game1/mission/chips/001.png",	"game1/mission/chips/001_on.png", CC_CALLBACK_1(Mission2::s03, this));
+		item_3 = MenuItemImage::create("data/game1/mission/chips/001.png",	"data/game1/mission/chips/001_on.png", CC_CALLBACK_1(Mission2::s03, this));
 		break;
 	case 2:
-		item_3 = MenuItemImage::create("game1/mission/chips/002.png",	"game1/mission/chips/002_on.png", CC_CALLBACK_1(Mission2::s03, this));
+		item_3 = MenuItemImage::create("data/game1/mission/chips/002.png",	"data/game1/mission/chips/002_on.png", CC_CALLBACK_1(Mission2::s03, this));
 		break;
 	case 3:
-		item_3 = MenuItemImage::create("game1/mission/chips/003.png",	"game1/mission/chips/003_on.png", CC_CALLBACK_1(Mission2::s03, this));
+		item_3 = MenuItemImage::create("data/game1/mission/chips/003.png",	"data/game1/mission/chips/003_on.png", CC_CALLBACK_1(Mission2::s03, this));
 		break;
 	case 4:
-		item_3 = MenuItemImage::create("game1/mission/chips/004.png",	"game1/mission/chips/004_on.png", CC_CALLBACK_1(Mission2::s03, this));
+		item_3 = MenuItemImage::create("data/game1/mission/chips/004.png",	"data/game1/mission/chips/004_on.png", CC_CALLBACK_1(Mission2::s03, this));
 		break;
 	case 5:
-		item_3 = MenuItemImage::create("game1/mission/chips/005.png",	"game1/mission/chips/005_on.png", CC_CALLBACK_1(Mission2::s03, this));
+		item_3 = MenuItemImage::create("data/game1/mission/chips/005.png",	"data/game1/mission/chips/005_on.png", CC_CALLBACK_1(Mission2::s03, this));
 		break;
 	case 6:
-		item_3 = MenuItemImage::create("game1/mission/chips/006.png",	"game1/mission/chips/006_on.png", CC_CALLBACK_1(Mission2::s03, this));
+		item_3 = MenuItemImage::create("data/game1/mission/chips/006.png",	"data/game1/mission/chips/006_on.png", CC_CALLBACK_1(Mission2::s03, this));
 		break;
 	case 7:
-		item_3 = MenuItemImage::create("game1/mission/chips/007.png",	"game1/mission/chips/007_on.png", CC_CALLBACK_1(Mission2::s03, this));
+		item_3 = MenuItemImage::create("data/game1/mission/chips/007.png",	"data/game1/mission/chips/007_on.png", CC_CALLBACK_1(Mission2::s03, this));
 		break;
 	case 8:
-		item_3 = MenuItemImage::create("game1/mission/chips/008.png",	"game1/mission/chips/008_on.png", CC_CALLBACK_1(Mission2::s03, this));
+		item_3 = MenuItemImage::create("data/game1/mission/chips/008.png",	"data/game1/mission/chips/008_on.png", CC_CALLBACK_1(Mission2::s03, this));
 		break;
 	case 9:
-		item_3 = MenuItemImage::create("game1/mission/chips/009.png",	"game1/mission/chips/009_on.png", CC_CALLBACK_1(Mission2::s03, this));
+		item_3 = MenuItemImage::create("data/game1/mission/chips/009.png",	"data/game1/mission/chips/009_on.png", CC_CALLBACK_1(Mission2::s03, this));
 		break;
 	case 10:
-		item_3 = MenuItemImage::create("game1/mission/chips/010.png",	"game1/mission/chips/010_on.png", CC_CALLBACK_1(Mission2::s03, this));
+		item_3 = MenuItemImage::create("data/game1/mission/chips/010.png",	"data/game1/mission/chips/010_on.png", CC_CALLBACK_1(Mission2::s03, this));
 		break;
 	case 11:
-		item_3 = MenuItemImage::create("game1/mission/chips/011.png",	"game1/mission/chips/011_on.png", CC_CALLBACK_1(Mission2::s03, this));
+		item_3 = MenuItemImage::create("data/game1/mission/chips/011.png",	"data/game1/mission/chips/011_on.png", CC_CALLBACK_1(Mission2::s03, this));
 		break;
 	case 12:
-		item_3 = MenuItemImage::create("game1/mission/chips/012.png",	"game1/mission/chips/012_on.png", CC_CALLBACK_1(Mission2::s03, this));
+		item_3 = MenuItemImage::create("data/game1/mission/chips/012.png",	"data/game1/mission/chips/012_on.png", CC_CALLBACK_1(Mission2::s03, this));
 		break;
 	case 13:
-		item_3 = MenuItemImage::create("game1/mission/chips/013.png",	"game1/mission/chips/013_on.png", CC_CALLBACK_1(Mission2::s03, this));
+		item_3 = MenuItemImage::create("data/game1/mission/chips/013.png",	"data/game1/mission/chips/013_on.png", CC_CALLBACK_1(Mission2::s03, this));
 		break;
 	case 14:
-		item_3 = MenuItemImage::create("game1/mission/chips/014.png",	"game1/mission/chips/014_on.png", CC_CALLBACK_1(Mission2::s03, this));
+		item_3 = MenuItemImage::create("data/game1/mission/chips/014.png",	"data/game1/mission/chips/014_on.png", CC_CALLBACK_1(Mission2::s03, this));
 		break;
 	default:
-		item_3 = MenuItemImage::create("game1/mission/chips/slot_empty.png",	"game1/mission/chips/slot_on.png", CC_CALLBACK_1(Mission2::s03, this));
+		item_3 = MenuItemImage::create("data/game1/mission/chips/slot_empty.png",	"data/game1/mission/chips/slot_on.png", CC_CALLBACK_1(Mission2::s03, this));
 		break;
 	}
 	item_3->setPosition(690, 640-86);
@@ -215,53 +216,53 @@ void Mission2::initSlot()
 	menu_3->setPosition(Vec2::ZERO);
 	this->addChild(menu_3); 
 
-	auto item_4 = MenuItemImage::create("game1/mission/chips/slot_empty.png",	"game1/mission/chips/slot_on.png", CC_CALLBACK_1(Mission2::s04, this));
+	auto item_4 = MenuItemImage::create("data/game1/mission/chips/slot_empty.png",	"data/game1/mission/chips/slot_on.png", CC_CALLBACK_1(Mission2::s04, this));
 	switch(now4)
 	{
 	case 1:
-		item_4 = MenuItemImage::create("game1/mission/chips/001.png",	"game1/mission/chips/001_on.png", CC_CALLBACK_1(Mission2::s04, this));
+		item_4 = MenuItemImage::create("data/game1/mission/chips/001.png",	"data/game1/mission/chips/001_on.png", CC_CALLBACK_1(Mission2::s04, this));
 		break;
 	case 2:
-		item_4 = MenuItemImage::create("game1/mission/chips/002.png",	"game1/mission/chips/002_on.png", CC_CALLBACK_1(Mission2::s04, this));
+		item_4 = MenuItemImage::create("data/game1/mission/chips/002.png",	"data/game1/mission/chips/002_on.png", CC_CALLBACK_1(Mission2::s04, this));
 		break;
 	case 3:
-		item_4 = MenuItemImage::create("game1/mission/chips/003.png",	"game1/mission/chips/003_on.png", CC_CALLBACK_1(Mission2::s04, this));
+		item_4 = MenuItemImage::create("data/game1/mission/chips/003.png",	"data/game1/mission/chips/003_on.png", CC_CALLBACK_1(Mission2::s04, this));
 		break;
 	case 4:
-		item_4 = MenuItemImage::create("game1/mission/chips/004.png",	"game1/mission/chips/004_on.png", CC_CALLBACK_1(Mission2::s04, this));
+		item_4 = MenuItemImage::create("data/game1/mission/chips/004.png",	"data/game1/mission/chips/004_on.png", CC_CALLBACK_1(Mission2::s04, this));
 		break;
 	case 5:
-		item_4 = MenuItemImage::create("game1/mission/chips/005.png",	"game1/mission/chips/005_on.png", CC_CALLBACK_1(Mission2::s04, this));
+		item_4 = MenuItemImage::create("data/game1/mission/chips/005.png",	"data/game1/mission/chips/005_on.png", CC_CALLBACK_1(Mission2::s04, this));
 		break;
 	case 6:
-		item_4 = MenuItemImage::create("game1/mission/chips/006.png",	"game1/mission/chips/006_on.png", CC_CALLBACK_1(Mission2::s04, this));
+		item_4 = MenuItemImage::create("data/game1/mission/chips/006.png",	"data/game1/mission/chips/006_on.png", CC_CALLBACK_1(Mission2::s04, this));
 		break;
 	case 7:
-		item_4 = MenuItemImage::create("game1/mission/chips/007.png",	"game1/mission/chips/007_on.png", CC_CALLBACK_1(Mission2::s04, this));
+		item_4 = MenuItemImage::create("data/game1/mission/chips/007.png",	"data/game1/mission/chips/007_on.png", CC_CALLBACK_1(Mission2::s04, this));
 		break;
 	case 8:
-		item_4 = MenuItemImage::create("game1/mission/chips/008.png",	"game1/mission/chips/008_on.png", CC_CALLBACK_1(Mission2::s04, this));
+		item_4 = MenuItemImage::create("data/game1/mission/chips/008.png",	"data/game1/mission/chips/008_on.png", CC_CALLBACK_1(Mission2::s04, this));
 		break;
 	case 9:
-		item_4 = MenuItemImage::create("game1/mission/chips/009.png",	"game1/mission/chips/009_on.png", CC_CALLBACK_1(Mission2::s04, this));
+		item_4 = MenuItemImage::create("data/game1/mission/chips/009.png",	"data/game1/mission/chips/009_on.png", CC_CALLBACK_1(Mission2::s04, this));
 		break;
 	case 10:
-		item_4 = MenuItemImage::create("game1/mission/chips/010.png",	"game1/mission/chips/010_on.png", CC_CALLBACK_1(Mission2::s04, this));
+		item_4 = MenuItemImage::create("data/game1/mission/chips/010.png",	"data/game1/mission/chips/010_on.png", CC_CALLBACK_1(Mission2::s04, this));
 		break;
 	case 11:
-		item_4 = MenuItemImage::create("game1/mission/chips/011.png",	"game1/mission/chips/011_on.png", CC_CALLBACK_1(Mission2::s04, this));
+		item_4 = MenuItemImage::create("data/game1/mission/chips/011.png",	"data/game1/mission/chips/011_on.png", CC_CALLBACK_1(Mission2::s04, this));
 		break;
 	case 12:
-		item_4 = MenuItemImage::create("game1/mission/chips/012.png",	"game1/mission/chips/012_on.png", CC_CALLBACK_1(Mission2::s04, this));
+		item_4 = MenuItemImage::create("data/game1/mission/chips/012.png",	"data/game1/mission/chips/012_on.png", CC_CALLBACK_1(Mission2::s04, this));
 		break;
 	case 13:
-		item_4 = MenuItemImage::create("game1/mission/chips/013.png",	"game1/mission/chips/013_on.png", CC_CALLBACK_1(Mission2::s04, this));
+		item_4 = MenuItemImage::create("data/game1/mission/chips/013.png",	"data/game1/mission/chips/013_on.png", CC_CALLBACK_1(Mission2::s04, this));
 		break;
 	case 14:
-		item_4 = MenuItemImage::create("game1/mission/chips/014.png",	"game1/mission/chips/014_on.png", CC_CALLBACK_1(Mission2::s04, this));
+		item_4 = MenuItemImage::create("data/game1/mission/chips/014.png",	"data/game1/mission/chips/014_on.png", CC_CALLBACK_1(Mission2::s04, this));
 		break;
 	default:
-		item_4 = MenuItemImage::create("game1/mission/chips/slot_empty.png",	"game1/mission/chips/slot_on.png", CC_CALLBACK_1(Mission2::s04, this));
+		item_4 = MenuItemImage::create("data/game1/mission/chips/slot_empty.png",	"data/game1/mission/chips/slot_on.png", CC_CALLBACK_1(Mission2::s04, this));
 		break;
 	}
 	item_4->setPosition(277, 640-155);
@@ -269,53 +270,53 @@ void Mission2::initSlot()
 	menu_4->setPosition(Vec2::ZERO);
 	this->addChild(menu_4); 
 
-	auto item_5 = MenuItemImage::create("game1/mission/chips/slot_empty.png",	"game1/mission/chips/slot_on.png", CC_CALLBACK_1(Mission2::s05, this));
+	auto item_5 = MenuItemImage::create("data/game1/mission/chips/slot_empty.png",	"data/game1/mission/chips/slot_on.png", CC_CALLBACK_1(Mission2::s05, this));
 	switch(now5)
 	{
 	case 1:
-		item_5 = MenuItemImage::create("game1/mission/chips/001.png",	"game1/mission/chips/001_on.png", CC_CALLBACK_1(Mission2::s05, this));
+		item_5 = MenuItemImage::create("data/game1/mission/chips/001.png",	"data/game1/mission/chips/001_on.png", CC_CALLBACK_1(Mission2::s05, this));
 		break;
 	case 2:
-		item_5 = MenuItemImage::create("game1/mission/chips/002.png",	"game1/mission/chips/002_on.png", CC_CALLBACK_1(Mission2::s05, this));
+		item_5 = MenuItemImage::create("data/game1/mission/chips/002.png",	"data/game1/mission/chips/002_on.png", CC_CALLBACK_1(Mission2::s05, this));
 		break;
 	case 3:
-		item_5 = MenuItemImage::create("game1/mission/chips/003.png",	"game1/mission/chips/003_on.png", CC_CALLBACK_1(Mission2::s05, this));
+		item_5 = MenuItemImage::create("data/game1/mission/chips/003.png",	"data/game1/mission/chips/003_on.png", CC_CALLBACK_1(Mission2::s05, this));
 		break;
 	case 4:
-		item_5 = MenuItemImage::create("game1/mission/chips/004.png",	"game1/mission/chips/004_on.png", CC_CALLBACK_1(Mission2::s05, this));
+		item_5 = MenuItemImage::create("data/game1/mission/chips/004.png",	"data/game1/mission/chips/004_on.png", CC_CALLBACK_1(Mission2::s05, this));
 		break;
 	case 5:
-		item_5 = MenuItemImage::create("game1/mission/chips/005.png",	"game1/mission/chips/005_on.png", CC_CALLBACK_1(Mission2::s05, this));
+		item_5 = MenuItemImage::create("data/game1/mission/chips/005.png",	"data/game1/mission/chips/005_on.png", CC_CALLBACK_1(Mission2::s05, this));
 		break;
 	case 6:
-		item_5 = MenuItemImage::create("game1/mission/chips/006.png",	"game1/mission/chips/006_on.png", CC_CALLBACK_1(Mission2::s05, this));
+		item_5 = MenuItemImage::create("data/game1/mission/chips/006.png",	"data/game1/mission/chips/006_on.png", CC_CALLBACK_1(Mission2::s05, this));
 		break;
 	case 7:
-		item_5 = MenuItemImage::create("game1/mission/chips/007.png",	"game1/mission/chips/007_on.png", CC_CALLBACK_1(Mission2::s05, this));
+		item_5 = MenuItemImage::create("data/game1/mission/chips/007.png",	"data/game1/mission/chips/007_on.png", CC_CALLBACK_1(Mission2::s05, this));
 		break;
 	case 8:
-		item_5 = MenuItemImage::create("game1/mission/chips/008.png",	"game1/mission/chips/008_on.png", CC_CALLBACK_1(Mission2::s05, this));
+		item_5 = MenuItemImage::create("data/game1/mission/chips/008.png",	"data/game1/mission/chips/008_on.png", CC_CALLBACK_1(Mission2::s05, this));
 		break;
 	case 9:
-		item_5 = MenuItemImage::create("game1/mission/chips/009.png",	"game1/mission/chips/009_on.png", CC_CALLBACK_1(Mission2::s05, this));
+		item_5 = MenuItemImage::create("data/game1/mission/chips/009.png",	"data/game1/mission/chips/009_on.png", CC_CALLBACK_1(Mission2::s05, this));
 		break;
 	case 10:
-		item_5 = MenuItemImage::create("game1/mission/chips/010.png",	"game1/mission/chips/010_on.png", CC_CALLBACK_1(Mission2::s05, this));
+		item_5 = MenuItemImage::create("data/game1/mission/chips/010.png",	"data/game1/mission/chips/010_on.png", CC_CALLBACK_1(Mission2::s05, this));
 		break;
 	case 11:
-		item_5 = MenuItemImage::create("game1/mission/chips/011.png",	"game1/mission/chips/011_on.png", CC_CALLBACK_1(Mission2::s05, this));
+		item_5 = MenuItemImage::create("data/game1/mission/chips/011.png",	"data/game1/mission/chips/011_on.png", CC_CALLBACK_1(Mission2::s05, this));
 		break;
 	case 12:
-		item_5 = MenuItemImage::create("game1/mission/chips/012.png",	"game1/mission/chips/012_on.png", CC_CALLBACK_1(Mission2::s05, this));
+		item_5 = MenuItemImage::create("data/game1/mission/chips/012.png",	"data/game1/mission/chips/012_on.png", CC_CALLBACK_1(Mission2::s05, this));
 		break;
 	case 13:
-		item_5 = MenuItemImage::create("game1/mission/chips/013.png",	"game1/mission/chips/013_on.png", CC_CALLBACK_1(Mission2::s05, this));
+		item_5 = MenuItemImage::create("data/game1/mission/chips/013.png",	"data/game1/mission/chips/013_on.png", CC_CALLBACK_1(Mission2::s05, this));
 		break;
 	case 14:
-		item_5 = MenuItemImage::create("game1/mission/chips/014.png",	"game1/mission/chips/014_on.png", CC_CALLBACK_1(Mission2::s05, this));
+		item_5 = MenuItemImage::create("data/game1/mission/chips/014.png",	"data/game1/mission/chips/014_on.png", CC_CALLBACK_1(Mission2::s05, this));
 		break;
 	default:
-		item_5 = MenuItemImage::create("game1/mission/chips/slot_empty.png",	"game1/mission/chips/slot_on.png", CC_CALLBACK_1(Mission2::s05, this));
+		item_5 = MenuItemImage::create("data/game1/mission/chips/slot_empty.png",	"data/game1/mission/chips/slot_on.png", CC_CALLBACK_1(Mission2::s05, this));
 		break;
 	}
 	item_5->setPosition(476, 640-155);
@@ -323,53 +324,53 @@ void Mission2::initSlot()
 	menu_5->setPosition(Vec2::ZERO);
 	this->addChild(menu_5); 
 
-	auto item_6 = MenuItemImage::create("game1/mission/chips/slot_empty.png",	"game1/mission/chips/slot_on.png", CC_CALLBACK_1(Mission2::s06, this));
+	auto item_6 = MenuItemImage::create("data/game1/mission/chips/slot_empty.png",	"data/game1/mission/chips/slot_on.png", CC_CALLBACK_1(Mission2::s06, this));
 	switch(now6)
 	{
 	case 1:
-		item_6 = MenuItemImage::create("game1/mission/chips/001.png",	"game1/mission/chips/001_on.png", CC_CALLBACK_1(Mission2::s06, this));
+		item_6 = MenuItemImage::create("data/game1/mission/chips/001.png",	"data/game1/mission/chips/001_on.png", CC_CALLBACK_1(Mission2::s06, this));
 		break;
 	case 2:
-		item_6 = MenuItemImage::create("game1/mission/chips/002.png",	"game1/mission/chips/002_on.png", CC_CALLBACK_1(Mission2::s06, this));
+		item_6 = MenuItemImage::create("data/game1/mission/chips/002.png",	"data/game1/mission/chips/002_on.png", CC_CALLBACK_1(Mission2::s06, this));
 		break;
 	case 3:
-		item_6 = MenuItemImage::create("game1/mission/chips/003.png",	"game1/mission/chips/003_on.png", CC_CALLBACK_1(Mission2::s06, this));
+		item_6 = MenuItemImage::create("data/game1/mission/chips/003.png",	"data/game1/mission/chips/003_on.png", CC_CALLBACK_1(Mission2::s06, this));
 		break;
 	case 4:
-		item_6 = MenuItemImage::create("game1/mission/chips/004.png",	"game1/mission/chips/004_on.png", CC_CALLBACK_1(Mission2::s06, this));
+		item_6 = MenuItemImage::create("data/game1/mission/chips/004.png",	"data/game1/mission/chips/004_on.png", CC_CALLBACK_1(Mission2::s06, this));
 		break;
 	case 5:
-		item_6 = MenuItemImage::create("game1/mission/chips/005.png",	"game1/mission/chips/005_on.png", CC_CALLBACK_1(Mission2::s06, this));
+		item_6 = MenuItemImage::create("data/game1/mission/chips/005.png",	"data/game1/mission/chips/005_on.png", CC_CALLBACK_1(Mission2::s06, this));
 		break;
 	case 6:
-		item_6 = MenuItemImage::create("game1/mission/chips/006.png",	"game1/mission/chips/006_on.png", CC_CALLBACK_1(Mission2::s06, this));
+		item_6 = MenuItemImage::create("data/game1/mission/chips/006.png",	"data/game1/mission/chips/006_on.png", CC_CALLBACK_1(Mission2::s06, this));
 		break;
 	case 7:
-		item_6 = MenuItemImage::create("game1/mission/chips/007.png",	"game1/mission/chips/007_on.png", CC_CALLBACK_1(Mission2::s06, this));
+		item_6 = MenuItemImage::create("data/game1/mission/chips/007.png",	"data/game1/mission/chips/007_on.png", CC_CALLBACK_1(Mission2::s06, this));
 		break;
 	case 8:
-		item_6 = MenuItemImage::create("game1/mission/chips/008.png",	"game1/mission/chips/008_on.png", CC_CALLBACK_1(Mission2::s06, this));
+		item_6 = MenuItemImage::create("data/game1/mission/chips/008.png",	"data/game1/mission/chips/008_on.png", CC_CALLBACK_1(Mission2::s06, this));
 		break;
 	case 9:
-		item_6 = MenuItemImage::create("game1/mission/chips/009.png",	"game1/mission/chips/009_on.png", CC_CALLBACK_1(Mission2::s06, this));
+		item_6 = MenuItemImage::create("data/game1/mission/chips/009.png",	"data/game1/mission/chips/009_on.png", CC_CALLBACK_1(Mission2::s06, this));
 		break;
 	case 10:
-		item_6 = MenuItemImage::create("game1/mission/chips/010.png",	"game1/mission/chips/010_on.png", CC_CALLBACK_1(Mission2::s06, this));
+		item_6 = MenuItemImage::create("data/game1/mission/chips/010.png",	"data/game1/mission/chips/010_on.png", CC_CALLBACK_1(Mission2::s06, this));
 		break;
 	case 11:
-		item_6 = MenuItemImage::create("game1/mission/chips/011.png",	"game1/mission/chips/011_on.png", CC_CALLBACK_1(Mission2::s06, this));
+		item_6 = MenuItemImage::create("data/game1/mission/chips/011.png",	"data/game1/mission/chips/011_on.png", CC_CALLBACK_1(Mission2::s06, this));
 		break;
 	case 12:
-		item_6 = MenuItemImage::create("game1/mission/chips/012.png",	"game1/mission/chips/012_on.png", CC_CALLBACK_1(Mission2::s06, this));
+		item_6 = MenuItemImage::create("data/game1/mission/chips/012.png",	"data/game1/mission/chips/012_on.png", CC_CALLBACK_1(Mission2::s06, this));
 		break;
 	case 13:
-		item_6 = MenuItemImage::create("game1/mission/chips/013.png",	"game1/mission/chips/013_on.png", CC_CALLBACK_1(Mission2::s06, this));
+		item_6 = MenuItemImage::create("data/game1/mission/chips/013.png",	"data/game1/mission/chips/013_on.png", CC_CALLBACK_1(Mission2::s06, this));
 		break;
 	case 14:
-		item_6 = MenuItemImage::create("game1/mission/chips/014.png",	"game1/mission/chips/014_on.png", CC_CALLBACK_1(Mission2::s06, this));
+		item_6 = MenuItemImage::create("data/game1/mission/chips/014.png",	"data/game1/mission/chips/014_on.png", CC_CALLBACK_1(Mission2::s06, this));
 		break;
 	default:
-		item_2 = MenuItemImage::create("game1/mission/chips/slot_empty.png",	"game1/mission/chips/slot_on.png", CC_CALLBACK_1(Mission2::s06, this));
+		item_2 = MenuItemImage::create("data/game1/mission/chips/slot_empty.png",	"data/game1/mission/chips/slot_on.png", CC_CALLBACK_1(Mission2::s06, this));
 		break;
 	}
 	item_6->setPosition(690, 640-155);
@@ -380,14 +381,14 @@ void Mission2::initSlot()
 
 void Mission2::initItems()
 {
-	auto item_1 = MenuItemImage::create("game1/mission/chips/001.png",	"game1/mission/chips/001_on.png", CC_CALLBACK_1(Mission2::c01, this));
+	auto item_1 = MenuItemImage::create("data/game1/mission/chips/001.png",	"data/game1/mission/chips/001_on.png", CC_CALLBACK_1(Mission2::c01, this));
 	if(UserDefault::getInstance()->getIntegerForKey("chip_001") == 0)
 	{
 			item_1 = MenuItemImage::create("",	"", CC_CALLBACK_1(Mission2::nothing, this));
 	}
 	else if(UserDefault::getInstance()->getIntegerForKey("chip_001") == 2)
 	{
-			item_1 = MenuItemImage::create("game1/mission/chips/001_on.png",	"game1/mission/chips/001.png", CC_CALLBACK_1(Mission2::c01, this));
+			item_1 = MenuItemImage::create("data/game1/mission/chips/001_on.png",	"data/game1/mission/chips/001.png", CC_CALLBACK_1(Mission2::c01, this));
 	}
 	else if(UserDefault::getInstance()->getIntegerForKey("chip_001") == 3)
 	{
@@ -398,14 +399,14 @@ void Mission2::initItems()
 	menu_1->setPosition(Vec2::ZERO);
 	this->addChild(menu_1); 
 
-	auto item_2 = MenuItemImage::create("game1/mission/chips/002.png",	"game1/mission/chips/002_on.png", CC_CALLBACK_1(Mission2::c02, this));
+	auto item_2 = MenuItemImage::create("data/game1/mission/chips/002.png",	"data/game1/mission/chips/002_on.png", CC_CALLBACK_1(Mission2::c02, this));
 	if(UserDefault::getInstance()->getIntegerForKey("chip_002") == 0)
 	{
 			item_2 = MenuItemImage::create("",	"", CC_CALLBACK_1(Mission2::nothing, this));
 	}
 	else if(UserDefault::getInstance()->getIntegerForKey("chip_002") == 2)
 	{
-			item_2 = MenuItemImage::create("game1/mission/chips/002_on.png",	"game1/mission/chips/002.png", CC_CALLBACK_1(Mission2::c02, this));
+			item_2 = MenuItemImage::create("data/game1/mission/chips/002_on.png",	"data/game1/mission/chips/002.png", CC_CALLBACK_1(Mission2::c02, this));
 	}
 	else if(UserDefault::getInstance()->getIntegerForKey("chip_002") == 3)
 	{
@@ -416,14 +417,14 @@ void Mission2::initItems()
 	menu_2->setPosition(Vec2::ZERO);
 	this->addChild(menu_2); 
 
-	auto item_3 = MenuItemImage::create("game1/mission/chips/003.png",	"game1/mission/chips/003_on.png", CC_CALLBACK_1(Mission2::c03, this));
+	auto item_3 = MenuItemImage::create("data/game1/mission/chips/003.png",	"data/game1/mission/chips/003_on.png", CC_CALLBACK_1(Mission2::c03, this));
 	if(UserDefault::getInstance()->getIntegerForKey("chip_003") == 0)
 	{
 			item_3 = MenuItemImage::create("",	"", CC_CALLBACK_1(Mission2::nothing, this));
 	}
 	else if(UserDefault::getInstance()->getIntegerForKey("chip_003") == 2)
 	{
-			item_3 = MenuItemImage::create("game1/mission/chips/003_on.png",	"game1/mission/chips/003.png", CC_CALLBACK_1(Mission2::c03, this));
+			item_3 = MenuItemImage::create("data/game1/mission/chips/003_on.png",	"data/game1/mission/chips/003.png", CC_CALLBACK_1(Mission2::c03, this));
 	}
 	else if(UserDefault::getInstance()->getIntegerForKey("chip_003") == 3)
 	{
@@ -434,14 +435,14 @@ void Mission2::initItems()
 	menu_3->setPosition(Vec2::ZERO);
 	this->addChild(menu_3); 
 
-	auto item_4 = MenuItemImage::create("game1/mission/chips/004.png",	"game1/mission/chips/004_on.png", CC_CALLBACK_1(Mission2::c04, this));
+	auto item_4 = MenuItemImage::create("data/game1/mission/chips/004.png",	"data/game1/mission/chips/004_on.png", CC_CALLBACK_1(Mission2::c04, this));
 	if(UserDefault::getInstance()->getIntegerForKey("chip_004") == 0)
 	{
 			item_4 = MenuItemImage::create("",	"", CC_CALLBACK_1(Mission2::nothing, this));
 	}
 	else if(UserDefault::getInstance()->getIntegerForKey("chip_004") == 2)
 	{
-			item_4 = MenuItemImage::create("game1/mission/chips/004_on.png",	"game1/mission/chips/004.png", CC_CALLBACK_1(Mission2::c04, this));
+			item_4 = MenuItemImage::create("data/game1/mission/chips/004_on.png",	"data/game1/mission/chips/004.png", CC_CALLBACK_1(Mission2::c04, this));
 	}
 	else if(UserDefault::getInstance()->getIntegerForKey("chip_004") == 3)
 	{
@@ -452,14 +453,14 @@ void Mission2::initItems()
 	menu_4->setPosition(Vec2::ZERO);
 	this->addChild(menu_4); 
 
-	auto item_5 = MenuItemImage::create("game1/mission/chips/005.png",	"game1/mission/chips/005_on.png", CC_CALLBACK_1(Mission2::c05, this));
+	auto item_5 = MenuItemImage::create("data/game1/mission/chips/005.png",	"data/game1/mission/chips/005_on.png", CC_CALLBACK_1(Mission2::c05, this));
 	if(UserDefault::getInstance()->getIntegerForKey("chip_005") == 0)
 	{
 			item_5 = MenuItemImage::create("",	"", CC_CALLBACK_1(Mission2::nothing, this));
 	}
 	else if(UserDefault::getInstance()->getIntegerForKey("chip_005") == 2)
 	{
-			item_5 = MenuItemImage::create("game1/mission/chips/005_on.png",	"game1/mission/chips/005.png", CC_CALLBACK_1(Mission2::c05, this));
+			item_5 = MenuItemImage::create("data/game1/mission/chips/005_on.png",	"data/game1/mission/chips/005.png", CC_CALLBACK_1(Mission2::c05, this));
 	}
 	else if(UserDefault::getInstance()->getIntegerForKey("chip_005") == 3)
 	{
@@ -470,14 +471,14 @@ void Mission2::initItems()
 	menu_5->setPosition(Vec2::ZERO);
 	this->addChild(menu_5); 
 
-	auto item_6 = MenuItemImage::create("game1/mission/chips/006.png",	"game1/mission/chips/006_on.png", CC_CALLBACK_1(Mission2::c06, this));
+	auto item_6 = MenuItemImage::create("data/game1/mission/chips/006.png",	"data/game1/mission/chips/006_on.png", CC_CALLBACK_1(Mission2::c06, this));
 	if(UserDefault::getInstance()->getIntegerForKey("chip_006") == 0)
 	{
 			item_6 = MenuItemImage::create("",	"", CC_CALLBACK_1(Mission2::nothing, this));
 	}
 	else if(UserDefault::getInstance()->getIntegerForKey("chip_006") == 2)
 	{
-			item_6 = MenuItemImage::create("game1/mission/chips/006_on.png",	"game1/mission/chips/006.png", CC_CALLBACK_1(Mission2::c06, this));
+			item_6 = MenuItemImage::create("data/game1/mission/chips/006_on.png",	"data/game1/mission/chips/006.png", CC_CALLBACK_1(Mission2::c06, this));
 	}
 	else if(UserDefault::getInstance()->getIntegerForKey("chip_006") == 3)
 	{
@@ -488,14 +489,14 @@ void Mission2::initItems()
 	menu_6->setPosition(Vec2::ZERO);
 	this->addChild(menu_6); 
 
-	auto item_7 = MenuItemImage::create("game1/mission/chips/007.png",	"game1/mission/chips/007_on.png", CC_CALLBACK_1(Mission2::c07, this));
+	auto item_7 = MenuItemImage::create("data/game1/mission/chips/007.png",	"data/game1/mission/chips/007_on.png", CC_CALLBACK_1(Mission2::c07, this));
 	if(UserDefault::getInstance()->getIntegerForKey("chip_007") == 0)
 	{
 			item_7 = MenuItemImage::create("",	"", CC_CALLBACK_1(Mission2::nothing, this));
 	}
 	else if(UserDefault::getInstance()->getIntegerForKey("chip_007") == 2)
 	{
-			item_7 = MenuItemImage::create("game1/mission/chips/007_on.png",	"game1/mission/chips/007.png", CC_CALLBACK_1(Mission2::c07, this));
+			item_7 = MenuItemImage::create("data/game1/mission/chips/007_on.png",	"data/game1/mission/chips/007.png", CC_CALLBACK_1(Mission2::c07, this));
 	}
 	else if(UserDefault::getInstance()->getIntegerForKey("chip_007") == 3)
 	{
@@ -506,14 +507,14 @@ void Mission2::initItems()
 	menu_7->setPosition(Vec2::ZERO);
 	this->addChild(menu_7); 
 
-	auto item_8 = MenuItemImage::create("game1/mission/chips/008.png",	"game1/mission/chips/008_on.png", CC_CALLBACK_1(Mission2::c08, this));
+	auto item_8 = MenuItemImage::create("data/game1/mission/chips/008.png",	"data/game1/mission/chips/008_on.png", CC_CALLBACK_1(Mission2::c08, this));
 	if(UserDefault::getInstance()->getIntegerForKey("chip_008") == 0)
 	{
 			item_8 = MenuItemImage::create("",	"", CC_CALLBACK_1(Mission2::nothing, this));
 	}
 	else if(UserDefault::getInstance()->getIntegerForKey("chip_008") == 2)
 	{
-			item_8 = MenuItemImage::create("game1/mission/chips/008_on.png",	"game1/mission/chips/008.png", CC_CALLBACK_1(Mission2::c08, this));
+			item_8 = MenuItemImage::create("data/game1/mission/chips/008_on.png",	"data/game1/mission/chips/008.png", CC_CALLBACK_1(Mission2::c08, this));
 	}
 	else if(UserDefault::getInstance()->getIntegerForKey("chip_008") == 3)
 	{
@@ -524,14 +525,14 @@ void Mission2::initItems()
 	menu_8->setPosition(Vec2::ZERO);
 	this->addChild(menu_8);
 
-	auto item_9 = MenuItemImage::create("game1/mission/chips/009.png",	"game1/mission/chips/009_on.png", CC_CALLBACK_1(Mission2::c09, this));
+	auto item_9 = MenuItemImage::create("data/game1/mission/chips/009.png",	"data/game1/mission/chips/009_on.png", CC_CALLBACK_1(Mission2::c09, this));
 	if(UserDefault::getInstance()->getIntegerForKey("chip_009") == 0)
 	{
 			item_9 = MenuItemImage::create("",	"", CC_CALLBACK_1(Mission2::nothing, this));
 	}
 	else if(UserDefault::getInstance()->getIntegerForKey("chip_009") == 2)
 	{
-			item_9 = MenuItemImage::create("game1/mission/chips/009_on.png",	"game1/mission/chips/009.png", CC_CALLBACK_1(Mission2::c09, this));
+			item_9 = MenuItemImage::create("data/game1/mission/chips/009_on.png",	"data/game1/mission/chips/009.png", CC_CALLBACK_1(Mission2::c09, this));
 	}
 	else if(UserDefault::getInstance()->getIntegerForKey("chip_009") == 3)
 	{
@@ -542,14 +543,14 @@ void Mission2::initItems()
 	menu_9->setPosition(Vec2::ZERO);
 	this->addChild(menu_9); 
 
-	auto item_10 = MenuItemImage::create("game1/mission/chips/010.png",	"game1/mission/chips/010_on.png", CC_CALLBACK_1(Mission2::c10, this));
+	auto item_10 = MenuItemImage::create("data/game1/mission/chips/010.png",	"data/game1/mission/chips/010_on.png", CC_CALLBACK_1(Mission2::c10, this));
 	if(UserDefault::getInstance()->getIntegerForKey("chip_010") == 0)
 	{
 			item_10 = MenuItemImage::create("",	"", CC_CALLBACK_1(Mission2::nothing, this));
 	}
 	else if(UserDefault::getInstance()->getIntegerForKey("chip_010") == 2)
 	{
-			item_10 = MenuItemImage::create("game1/mission/chips/010_on.png",	"game1/mission/chips/010.png", CC_CALLBACK_1(Mission2::c10, this));
+			item_10 = MenuItemImage::create("data/game1/mission/chips/010_on.png",	"data/game1/mission/chips/010.png", CC_CALLBACK_1(Mission2::c10, this));
 	}
 	else if(UserDefault::getInstance()->getIntegerForKey("chip_010") == 3)
 	{
@@ -560,14 +561,14 @@ void Mission2::initItems()
 	menu_10->setPosition(Vec2::ZERO);
 	this->addChild(menu_10); 
 
-	auto item_11 = MenuItemImage::create("game1/mission/chips/011.png",	"game1/mission/chips/011_on.png", CC_CALLBACK_1(Mission2::c11, this));
+	auto item_11 = MenuItemImage::create("data/game1/mission/chips/011.png",	"data/game1/mission/chips/011_on.png", CC_CALLBACK_1(Mission2::c11, this));
 	if(UserDefault::getInstance()->getIntegerForKey("chip_011") == 0)
 	{
 			item_11 = MenuItemImage::create("",	"", CC_CALLBACK_1(Mission2::nothing, this));
 	}
 	else if(UserDefault::getInstance()->getIntegerForKey("chip_011") == 2)
 	{
-			item_11 = MenuItemImage::create("game1/mission/chips/011_on.png",	"game1/mission/chips/011.png", CC_CALLBACK_1(Mission2::c11, this));
+			item_11 = MenuItemImage::create("data/game1/mission/chips/011_on.png",	"data/game1/mission/chips/011.png", CC_CALLBACK_1(Mission2::c11, this));
 	}
 	else if(UserDefault::getInstance()->getIntegerForKey("chip_011") == 3)
 	{
@@ -578,14 +579,14 @@ void Mission2::initItems()
 	menu_11->setPosition(Vec2::ZERO);
 	this->addChild(menu_11); 
 
-	auto item_12 = MenuItemImage::create("game1/mission/chips/012.png",	"game1/mission/chips/012_on.png", CC_CALLBACK_1(Mission2::c12, this));
+	auto item_12 = MenuItemImage::create("data/game1/mission/chips/012.png",	"data/game1/mission/chips/012_on.png", CC_CALLBACK_1(Mission2::c12, this));
 	if(UserDefault::getInstance()->getIntegerForKey("chip_012") == 0)
 	{
 			item_12 = MenuItemImage::create("",	"", CC_CALLBACK_1(Mission2::nothing, this));
 	}
 	else if(UserDefault::getInstance()->getIntegerForKey("chip_012") == 2)
 	{
-			item_12 = MenuItemImage::create("game1/mission/chips/012_on.png",	"game1/mission/chips/012.png", CC_CALLBACK_1(Mission2::c12, this));
+			item_12 = MenuItemImage::create("data/game1/mission/chips/012_on.png",	"data/game1/mission/chips/012.png", CC_CALLBACK_1(Mission2::c12, this));
 	}
 	else if(UserDefault::getInstance()->getIntegerForKey("chip_012") == 3)
 	{
@@ -596,14 +597,14 @@ void Mission2::initItems()
 	menu_12->setPosition(Vec2::ZERO);
 	this->addChild(menu_12); 
 
-	auto item_13 = MenuItemImage::create("game1/mission/chips/013.png",	"game1/mission/chips/013_on.png", CC_CALLBACK_1(Mission2::c13, this));
+	auto item_13 = MenuItemImage::create("data/game1/mission/chips/013.png",	"data/game1/mission/chips/013_on.png", CC_CALLBACK_1(Mission2::c13, this));
 	if(UserDefault::getInstance()->getIntegerForKey("chip_013") == 0)
 	{
 			item_13 = MenuItemImage::create("",	"", CC_CALLBACK_1(Mission2::nothing, this));
 	}
 	else if(UserDefault::getInstance()->getIntegerForKey("chip_013") == 2)
 	{
-			item_13 = MenuItemImage::create("game1/mission/chips/013_on.png",	"game1/mission/chips/013.png", CC_CALLBACK_1(Mission2::c13, this));
+			item_13 = MenuItemImage::create("data/game1/mission/chips/013_on.png",	"data/game1/mission/chips/013.png", CC_CALLBACK_1(Mission2::c13, this));
 	}
 	else if(UserDefault::getInstance()->getIntegerForKey("chip_013") == 3)
 	{
@@ -614,14 +615,14 @@ void Mission2::initItems()
 	menu_13->setPosition(Vec2::ZERO);
 	this->addChild(menu_13); 
 
-	auto item_14 = MenuItemImage::create("game1/mission/chips/014.png",	"game1/mission/chips/014_on.png", CC_CALLBACK_1(Mission2::c14, this));
+	auto item_14 = MenuItemImage::create("data/game1/mission/chips/014.png",	"data/game1/mission/chips/014_on.png", CC_CALLBACK_1(Mission2::c14, this));
 	if(UserDefault::getInstance()->getIntegerForKey("chip_014") == 0)
 	{
 			item_14 = MenuItemImage::create("",	"", CC_CALLBACK_1(Mission2::nothing, this));
 	}
 	else if(UserDefault::getInstance()->getIntegerForKey("chip_014") == 2)
 	{
-			item_14 = MenuItemImage::create("game1/mission/chips/014_on.png",	"game1/mission/chips/014.png", CC_CALLBACK_1(Mission2::c14, this));
+			item_14 = MenuItemImage::create("data/game1/mission/chips/014_on.png",	"data/game1/mission/chips/014.png", CC_CALLBACK_1(Mission2::c14, this));
 	}
 	else if(UserDefault::getInstance()->getIntegerForKey("chip_014") == 3)
 	{
@@ -642,7 +643,7 @@ void Mission2::menuCloseCallback(Ref* pSender)
 	offOtherChip();
 	UserDefault::getInstance()->setIntegerForKey("chip_now", 0);
 	UserDefault::getInstance()->flush();
-	Director::getInstance()->popScene();
+	Director::getInstance()->replaceScene(RoomScene04Final::createScene());
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     exit(0);
 #endif
@@ -653,8 +654,8 @@ void Mission2::initCancel()
 	 Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 	auto closeItem = MenuItemImage::create(
-                                           "CloseNormal.png",
-                                           "CloseSelected.png",
+                                           "data/CloseNormal.png",
+                                           "data/CloseSelected.png",
 										   CC_CALLBACK_1(Mission2::menuCloseCallback, this));
     
 	closeItem->setPosition(Vec2(origin.x + visibleSize.width - closeItem->getContentSize().width/2 ,
@@ -669,8 +670,8 @@ void Mission2::initButton()
 {
 
 	auto closeItem = MenuItemImage::create(
-                                           "game1/mission/chips/button_off.png",
-                                           "game1/mission/chips/button_on.png",
+                                           "data/game1/mission/chips/button_off.png",
+                                           "data/game1/mission/chips/button_on.png",
 										   CC_CALLBACK_1(Mission2::b01, this));
     
 	closeItem->setPosition(780, 640-320);
@@ -1673,13 +1674,17 @@ void Mission2::b01(cocos2d::Ref* pSender)
 	{
 		UserDefault::getInstance()->setIntegerForKey("mission_result", 5);
 			UserDefault::getInstance()->flush();
-			Director::getInstance()->replaceScene(MissionDialog::createScene());
+			UserDefault::getInstance()->setIntegerForKey("Mission2_complete", 1);
+			UserDefault::getInstance()->flush();
+			Director::getInstance()->replaceScene(RoomScene04Final::createScene());
+			Director::getInstance()->pushScene(MissionDialog::createScene());
 	}
 	else
 	{
 		UserDefault::getInstance()->setIntegerForKey("mission_result", 4);
 			UserDefault::getInstance()->flush();
-			Director::getInstance()->replaceScene(MissionDialog::createScene());
+			Director::getInstance()->replaceScene(RoomScene04Final::createScene());
+			Director::getInstance()->pushScene(MissionDialog::createScene());
 	}
 
 }

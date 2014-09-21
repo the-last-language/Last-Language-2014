@@ -32,6 +32,7 @@ public:
 	void load203(Ref *sender);
 	void load401(Ref *sender);
 	void load402(Ref *sender);
+	void load403(Ref *sender);//Final Room
 	void load501(Ref *sender);
 	void load502(Ref *sender);
 	void loadButton(int num);

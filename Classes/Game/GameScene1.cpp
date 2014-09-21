@@ -51,7 +51,7 @@ bool GameScene1::init()
 
 void GameScene1::initObj1()//나가는 문.
 {
-	auto item_1 = MenuItemImage::create("game1/object/bg0_0.png", "game1/object/bg0_0_on.png", CC_CALLBACK_1(GameScene1::callObj1Content, this));
+	auto item_1 = MenuItemImage::create("data/game1/object/bg0_0.png", "data/game1/object/bg0_0_on.png", CC_CALLBACK_1(GameScene1::callObj1Content, this));
 	item_1->setPosition(630, 390);
 	auto menu_1 = Menu::create(item_1, NULL);
 	menu_1->setPosition(Vec2::ZERO);
@@ -60,7 +60,7 @@ void GameScene1::initObj1()//나가는 문.
 
 void GameScene1::initObj2()//칩 줍기.
 {
-	auto item_2 = MenuItemImage::create("game1/object/bg0_1.png", "game1/object/bg0_1_on.png", CC_CALLBACK_1(GameScene1::callObj2Content, this));
+	auto item_2 = MenuItemImage::create("data/game1/object/bg0_1.png", "data/game1/object/bg0_1_on.png", CC_CALLBACK_1(GameScene1::callObj2Content, this));
 	item_2->setPosition(287, 487);
 	auto menu_2 = Menu::create(item_2, NULL);
 	menu_2->setPosition(Vec2::ZERO);
@@ -69,7 +69,7 @@ void GameScene1::initObj2()//칩 줍기.
 
 void GameScene1::initObj3()//전선 줍기.
 {
-	auto item_1 = MenuItemImage::create("game1/object/bg0_2.png",	"game1/object/bg0_2_on.png", CC_CALLBACK_1(GameScene1::callObj3Content, this));
+	auto item_1 = MenuItemImage::create("data/game1/object/bg0_2.png",	"data/game1/object/bg0_2_on.png", CC_CALLBACK_1(GameScene1::callObj3Content, this));
 	item_1->setPosition(207, 167);
 	auto menu_1 = Menu::create(item_1, NULL);
 	menu_1->setPosition(Vec2::ZERO);
@@ -81,8 +81,8 @@ void GameScene1::initExit()
  Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 	auto closeItem = MenuItemImage::create(
-                                           "CloseNormal.png",
-                                           "CloseSelected.png",
+                                           "data/CloseNormal.png",
+                                           "data/CloseSelected.png",
 										   CC_CALLBACK_1(GameScene1::menuCloseCallback, this));
     
 	closeItem->setPosition(Vec2(origin.x + visibleSize.width - closeItem->getContentSize().width/2 ,
@@ -99,7 +99,7 @@ void GameScene1::initBG()
 	 Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	auto sprite1 = Sprite::create("game1/bg0.png");
+	auto sprite1 = Sprite::create("data/game1/bg0.png");
 
 	sprite1->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
 

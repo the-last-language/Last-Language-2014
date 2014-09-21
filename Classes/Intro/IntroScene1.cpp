@@ -42,18 +42,18 @@ bool IntroScene1::init()
 
 	initAllDefaults();
 
-	auto sprite1 = Sprite::create("scene/Scene1.jpg");
+	auto sprite1 = Sprite::create("data/scene/Scene1.jpg");
 
 	sprite1->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
 
 	this->addChild(sprite1, 0);
 
-	auto label = Label::createWithTTF(UTF8("여긴 뭐지? 뭐하다가 여기까지 왔을까."),"fonts/GodoB.ttf",30);
+	auto label = Label::createWithTTF(UTF8("깨어나 보니 처음 보는 방이다.\n내가 어떻게 해서 여기까지 왔는지\n전혀 기억나지 않는다."),"data/fonts/GodoB.ttf",30);
 	label->setPosition(Point(480,100));
 	this->addChild(label);
 
 	//다음으로 넘기기
-	auto item_1 = MenuItemImage::create("scene/next.png", "scene/next_on.png", CC_CALLBACK_1(IntroScene1::goNext, this));
+	auto item_1 = MenuItemImage::create("data/scene/next.png", "data/scene/next_on.png", CC_CALLBACK_1(IntroScene1::goNext, this));
 	item_1->setPosition(920, 40);
 	auto menu_1 = Menu::create(item_1, NULL);
 	menu_1->setPosition(Vec2::ZERO);
@@ -107,6 +107,8 @@ void IntroScene1::initAllDefaults()
 	UserDefault::getInstance()->setIntegerForKey("Mission0_complete", 0);
 	UserDefault::getInstance()->flush();
 	UserDefault::getInstance()->setIntegerForKey("Mission1_complete", 0);
+	UserDefault::getInstance()->flush();
+	UserDefault::getInstance()->setIntegerForKey("Mission2_complete", 0);
 	UserDefault::getInstance()->flush();
 	UserDefault::getInstance()->setIntegerForKey("Mission1", 0);
 	UserDefault::getInstance()->flush();

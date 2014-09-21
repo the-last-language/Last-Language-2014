@@ -43,10 +43,10 @@ bool Mission1::init()
 	//배경 지정.
 	int wires = UserDefault::getInstance()->getIntegerForKey("item_wire1");
 	//ran = 2;
-	auto sprite1_1= Sprite::create("game1/mission/1_1.png");
+	auto sprite1_1= Sprite::create("data/game1/mission/1_1.png");
 	if (ran == 2)
 	{
-		sprite1_1 = Sprite::create("game1/mission/1_2.png");
+		sprite1_1 = Sprite::create("data/game1/mission/1_2.png");
 		
 	}
 	sprite1_1->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
@@ -54,25 +54,25 @@ bool Mission1::init()
 
 	std::string wires_str = UserDefault::getInstance()->getStringForKey("item_wire1");
 
-	auto label_wire = Label::createWithTTF((UTF8("사용가능한 전선의 수 : ")),"fonts/GodoB.ttf",30);
+	auto label_wire = Label::createWithTTF((UTF8("사용가능한 전선의 수 : ")),"data/fonts/GodoB.ttf",30);
 	label_wire->setPosition(Point(615,640-360));
 	this->addChild(label_wire);
 
-	auto label_wire_cnt = Label::createWithTTF((UTF8(wires_str.c_str())),"fonts/GodoB.ttf",30);
+	auto label_wire_cnt = Label::createWithTTF((UTF8(wires_str.c_str())),"data/fonts/GodoB.ttf",30);
 	label_wire_cnt->setPosition(Point(800,640-360));
 	this->addChild(label_wire_cnt);
 
 	
 	int w1_1 = 393, w1_2 = 163;
 
-	auto item_1 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire_on.png", CC_CALLBACK_1(Mission1::m01, this));
+	auto item_1 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire_on.png", CC_CALLBACK_1(Mission1::m01, this));
 	if(UserDefault::getInstance()->getIntegerForKey("m01") == 1)
 	{
-		item_1 = MenuItemImage::create("game1/mission/1_wire_on.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m01, this));
+		item_1 = MenuItemImage::create("data/game1/mission/1_wire_on.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m01, this));
 	}
 	else if(wires == 0)
 	{
-		item_1 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
+		item_1 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
 	}
 	item_1->setPosition(w1_1, 640-110);
 	if(ran == 2)
@@ -81,14 +81,14 @@ bool Mission1::init()
 	menu_1->setPosition(Vec2::ZERO);
 	this->addChild(menu_1); 
 
-	auto item_2 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m02, this));
+	auto item_2 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m02, this));
 	if(UserDefault::getInstance()->getIntegerForKey("m02") == 1)
 	{
-		item_2 = MenuItemImage::create("game1/mission/1_wire_on.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m02, this));
+		item_2 = MenuItemImage::create("data/game1/mission/1_wire_on.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m02, this));
 	}
 	else if(wires == 0)
 	{
-		item_2 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
+		item_2 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
 	}
 	item_2->setPosition(w1_1+36, 640-110);
 	if(ran == 2)
@@ -97,14 +97,14 @@ bool Mission1::init()
 	menu_2->setPosition(Vec2::ZERO);
 	this->addChild(menu_2); 
 
-	auto item_3 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m03, this));
+	auto item_3 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m03, this));
 	if(UserDefault::getInstance()->getIntegerForKey("m03") == 1)
 	{
-		item_3 = MenuItemImage::create("game1/mission/1_wire_on.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m03, this));
+		item_3 = MenuItemImage::create("data/game1/mission/1_wire_on.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m03, this));
 	}
 	else if(wires == 0)
 	{
-		item_3 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
+		item_3 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
 	}
 	item_3->setPosition(w1_1+36+35, 640-110);
 	if(ran == 2)
@@ -113,14 +113,14 @@ bool Mission1::init()
 	menu_3->setPosition(Vec2::ZERO);
 	this->addChild(menu_3); 
 
-	auto item_4 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m04, this));
+	auto item_4 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m04, this));
 	if(UserDefault::getInstance()->getIntegerForKey("m04") == 1)
 	{
-		item_4 = MenuItemImage::create("game1/mission/1_wire_on.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m04, this));
+		item_4 = MenuItemImage::create("data/game1/mission/1_wire_on.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m04, this));
 	}
 	else if(wires == 0)
 	{
-		item_4 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
+		item_4 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
 	}
 	item_4->setPosition(w1_1+36+36+38, 640-110);
 	if(ran == 2)
@@ -132,14 +132,14 @@ bool Mission1::init()
 
 	int w2_1 = 625, w2_2 = 625;
 
-	auto item_5 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire_on.png", CC_CALLBACK_1(Mission1::m05, this));
+	auto item_5 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire_on.png", CC_CALLBACK_1(Mission1::m05, this));
 	if(UserDefault::getInstance()->getIntegerForKey("m05") == 1)
 	{
-		item_5 = MenuItemImage::create("game1/mission/1_wire_on.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m05, this));
+		item_5 = MenuItemImage::create("data/game1/mission/1_wire_on.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m05, this));
 	}
 	else if(wires == 0)
 	{
-		item_5 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
+		item_5 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
 	}
 	item_5->setPosition(w2_1, 640-110);
 	if(ran == 2)
@@ -148,14 +148,14 @@ bool Mission1::init()
 	menu_5->setPosition(Vec2::ZERO);
 	this->addChild(menu_5); 
 
-	auto item_6 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire_on.png", CC_CALLBACK_1(Mission1::m06, this));
+	auto item_6 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire_on.png", CC_CALLBACK_1(Mission1::m06, this));
 	if(UserDefault::getInstance()->getIntegerForKey("m06") == 1)
 	{
-		item_6 = MenuItemImage::create("game1/mission/1_wire_on.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m06, this));
+		item_6 = MenuItemImage::create("data/game1/mission/1_wire_on.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m06, this));
 	}
 	else if(wires == 0)
 	{
-		item_6 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
+		item_6 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
 	}
 	item_6->setPosition(w2_1+36, 640-110);
 	if(ran == 2)
@@ -164,14 +164,14 @@ bool Mission1::init()
 	menu_6->setPosition(Vec2::ZERO);
 	this->addChild(menu_6); 
 
-	auto item_7 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire_on.png", CC_CALLBACK_1(Mission1::m07, this));
+	auto item_7 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire_on.png", CC_CALLBACK_1(Mission1::m07, this));
 	if(UserDefault::getInstance()->getIntegerForKey("m07") == 1)
 	{
-		item_7 = MenuItemImage::create("game1/mission/1_wire_on.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m07, this));
+		item_7 = MenuItemImage::create("data/game1/mission/1_wire_on.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m07, this));
 	}
 	else if(wires == 0)
 	{
-		item_7 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
+		item_7 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
 	}
 	item_7->setPosition(w2_1+36+35, 640-110);
 	if(ran == 2)
@@ -180,14 +180,14 @@ bool Mission1::init()
 	menu_7->setPosition(Vec2::ZERO);
 	this->addChild(menu_7); 
 
-	auto item_8 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire_on.png", CC_CALLBACK_1(Mission1::m08, this));
+	auto item_8 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire_on.png", CC_CALLBACK_1(Mission1::m08, this));
 	if(UserDefault::getInstance()->getIntegerForKey("m08") == 1)
 	{
-		item_8 = MenuItemImage::create("game1/mission/1_wire_on.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m08, this));
+		item_8 = MenuItemImage::create("data/game1/mission/1_wire_on.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m08, this));
 	}
 	else if(wires == 0)
 	{
-		item_8 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
+		item_8 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
 	}
 	item_8->setPosition(w2_1+36+36+38, 640-110);
 	if(ran == 2)
@@ -199,14 +199,14 @@ bool Mission1::init()
 
 	int w3_1 = 163, w3_2 = 393;
 
-	auto item_9 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire_on.png", CC_CALLBACK_1(Mission1::m09, this));
+	auto item_9 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire_on.png", CC_CALLBACK_1(Mission1::m09, this));
 	if(UserDefault::getInstance()->getIntegerForKey("m09") == 1)
 	{
-		item_9 = MenuItemImage::create("game1/mission/1_wire_on.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m09, this));
+		item_9 = MenuItemImage::create("data/game1/mission/1_wire_on.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m09, this));
 	}
 	else if(wires == 0)
 	{
-		item_9 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
+		item_9 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
 	}
 	item_9->setPosition(w3_1, 640-192);
 	if(ran == 2)
@@ -215,14 +215,14 @@ bool Mission1::init()
 	menu_9->setPosition(Vec2::ZERO);
 	this->addChild(menu_9); 
 
-	auto item_10 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire_on.png", CC_CALLBACK_1(Mission1::m10, this));
+	auto item_10 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire_on.png", CC_CALLBACK_1(Mission1::m10, this));
 	if(UserDefault::getInstance()->getIntegerForKey("m10") == 1)
 	{
-		item_10 = MenuItemImage::create("game1/mission/1_wire_on.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m10, this));
+		item_10 = MenuItemImage::create("data/game1/mission/1_wire_on.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m10, this));
 	}
 	else if(wires == 0)
 	{
-		item_10 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
+		item_10 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
 	}
 	item_10->setPosition(w3_1+36, 640-192);
 	if(ran == 2)
@@ -231,14 +231,14 @@ bool Mission1::init()
 	menu_10->setPosition(Vec2::ZERO);
 	this->addChild(menu_10); 
 
-	auto item_11 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire_on.png", CC_CALLBACK_1(Mission1::m11, this));
+	auto item_11 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire_on.png", CC_CALLBACK_1(Mission1::m11, this));
 	if(UserDefault::getInstance()->getIntegerForKey("m11") == 1)
 	{
-		item_11 = MenuItemImage::create("game1/mission/1_wire_on.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m11, this));
+		item_11 = MenuItemImage::create("data/game1/mission/1_wire_on.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m11, this));
 	}
 	else if(wires == 0)
 	{
-		item_11 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
+		item_11 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
 	}
 	item_11->setPosition(w3_1+36+35, 640-192);
 	if(ran == 2)
@@ -247,14 +247,14 @@ bool Mission1::init()
 	menu_11->setPosition(Vec2::ZERO);
 	this->addChild(menu_11); 
 
-	auto item_12 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire_on.png", CC_CALLBACK_1(Mission1::m12, this));
+	auto item_12 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire_on.png", CC_CALLBACK_1(Mission1::m12, this));
 	if(UserDefault::getInstance()->getIntegerForKey("m12") == 1)
 	{
-		item_12 = MenuItemImage::create("game1/mission/1_wire_on.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m12, this));
+		item_12 = MenuItemImage::create("data/game1/mission/1_wire_on.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m12, this));
 	}
 	else if(wires == 0)
 	{
-		item_12 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
+		item_12 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
 	}
 	item_12->setPosition(w3_1+36+36+38, 640-192);
 	if(ran == 2)
@@ -266,14 +266,14 @@ bool Mission1::init()
 
 	int w4_1 = 625, w4_2 = 625;
 
-	auto item_13 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire_on.png", CC_CALLBACK_1(Mission1::m13, this));
+	auto item_13 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire_on.png", CC_CALLBACK_1(Mission1::m13, this));
 	if(UserDefault::getInstance()->getIntegerForKey("m13") == 1)
 	{
-		item_13 = MenuItemImage::create("game1/mission/1_wire_on.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m13, this));
+		item_13 = MenuItemImage::create("data/game1/mission/1_wire_on.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m13, this));
 	}
 	else if(wires == 0)
 	{
-		item_13 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
+		item_13 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
 	}
 	item_13->setPosition(w4_1, 640-192);
 	if(ran == 2)
@@ -282,14 +282,14 @@ bool Mission1::init()
 	menu_13->setPosition(Vec2::ZERO);
 	this->addChild(menu_13); 
 
-	auto item_14 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire_on.png", CC_CALLBACK_1(Mission1::m14, this));
+	auto item_14 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire_on.png", CC_CALLBACK_1(Mission1::m14, this));
 	if(UserDefault::getInstance()->getIntegerForKey("m14") == 1)
 	{
-		item_14 = MenuItemImage::create("game1/mission/1_wire_on.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m14, this));
+		item_14 = MenuItemImage::create("data/game1/mission/1_wire_on.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m14, this));
 	}
 	else if(wires == 0)
 	{
-		item_14 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
+		item_14 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
 	}
 	item_14->setPosition(w4_1+36, 640-192);
 	if(ran == 2)
@@ -298,14 +298,14 @@ bool Mission1::init()
 	menu_14->setPosition(Vec2::ZERO);
 	this->addChild(menu_14); 
 
-	auto item_15 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire_on.png", CC_CALLBACK_1(Mission1::m15, this));
+	auto item_15 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire_on.png", CC_CALLBACK_1(Mission1::m15, this));
 	if(UserDefault::getInstance()->getIntegerForKey("m15") == 1)
 	{
-		item_15 = MenuItemImage::create("game1/mission/1_wire_on.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m15, this));
+		item_15 = MenuItemImage::create("data/game1/mission/1_wire_on.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m15, this));
 	}
 	else if(wires == 0)
 	{
-		item_15 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
+		item_15 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
 	}
 	item_15->setPosition(w4_1+36+35, 640-192);
 	if(ran == 2)
@@ -314,14 +314,14 @@ bool Mission1::init()
 	menu_15->setPosition(Vec2::ZERO);
 	this->addChild(menu_15); 
 
-	auto item_16 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire_on.png", CC_CALLBACK_1(Mission1::m16, this));
+	auto item_16 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire_on.png", CC_CALLBACK_1(Mission1::m16, this));
 	if(UserDefault::getInstance()->getIntegerForKey("m16") == 1)
 	{
-		item_16 = MenuItemImage::create("game1/mission/1_wire_on.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m16, this));
+		item_16 = MenuItemImage::create("data/game1/mission/1_wire_on.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::m16, this));
 	}
 	else if(wires == 0)
 	{
-		item_16 = MenuItemImage::create("game1/mission/1_wire.png",	"game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
+		item_16 = MenuItemImage::create("data/game1/mission/1_wire.png",	"data/game1/mission/1_wire.png", CC_CALLBACK_1(Mission1::nothing, this));
 	}
 	item_16->setPosition(w4_1+36+36+38, 640-192);
 	if(ran == 2)
@@ -330,7 +330,7 @@ bool Mission1::init()
 	menu_16->setPosition(Vec2::ZERO);
 	this->addChild(menu_16); 
 
-	auto item_on = MenuItemImage::create("game1/mission/1_button.png",	"game1/mission/1_button_on.png", CC_CALLBACK_1(Mission1::result, this));
+	auto item_on = MenuItemImage::create("data/game1/mission/1_button.png",	"data/game1/mission/1_button_on.png", CC_CALLBACK_1(Mission1::result, this));
 
 	item_on->setPosition(280, 640-365);
 	auto menu_on = Menu::create(item_on, NULL);
@@ -347,8 +347,8 @@ void Mission1::initCancel()
 	 Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 	auto closeItem = MenuItemImage::create(
-                                           "CloseNormal.png",
-                                           "CloseSelected.png",
+                                           "data/CloseNormal.png",
+                                           "data/CloseSelected.png",
 										   CC_CALLBACK_1(Mission1::menuCloseCallback, this));
     
 	closeItem->setPosition(Vec2(origin.x + visibleSize.width - closeItem->getContentSize().width/2 ,

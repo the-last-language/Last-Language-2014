@@ -9,5 +9,6 @@
 #include"Game/RoomScene0203.h"
 #include"Game/RoomScene0401.h"
 #include"Game/RoomScene0402.h"
+#include"Game/RoomScene04Final.h"
 #include"Game/RoomScene0501.h"
 #include"Game/RoomScene0502.h"

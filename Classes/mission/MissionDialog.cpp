@@ -26,7 +26,7 @@ bool MissionDialog::init()
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	 auto sprite1 = Sprite::create("MissionDialog/bg.png");
+	 auto sprite1 = Sprite::create("data/MissionDialog/bg.png");
 	
 	 int MissionDialog_num = UserDefault::getInstance()->getIntegerForKey("mission_result");
 	 int fail;
@@ -36,10 +36,10 @@ bool MissionDialog::init()
 		fail = UserDefault::getInstance()->getIntegerForKey("failcnt");
 		UserDefault::getInstance()->setIntegerForKey("failcnt", fail+1);
 	UserDefault::getInstance()->flush();
-		sprite1 = Sprite::create("game1/mission/0_fail.png");
+		sprite1 = Sprite::create("data/game1/mission/0_fail.png");
 		break;
 	case 1://game1, 문장찾기 게임 성공
-		sprite1 = Sprite::create("game1/mission/0_success.png");
+		sprite1 = Sprite::create("data/game1/mission/0_success.png");
 		UserDefault::getInstance()->setIntegerForKey("mission0_1_1", 0);
 	UserDefault::getInstance()->flush();
 	UserDefault::getInstance()->setIntegerForKey("mission0_1_2", 0);
@@ -66,25 +66,25 @@ bool MissionDialog::init()
 	UserDefault::getInstance()->flush();
 		break;//여기까지 GameScene1에 할당된 대화창
 	case 2://단어 나누기 실패
-		sprite1 = Sprite::create("game1/mission/1_fail.png");
+		sprite1 = Sprite::create("data/game1/mission/1_fail.png");
 		fail = UserDefault::getInstance()->getIntegerForKey("failcnt");
 		UserDefault::getInstance()->setIntegerForKey("failcnt", fail+1);
 	UserDefault::getInstance()->flush();
 		break;
 	case 3://단어 나누기 성공
-		sprite1 = Sprite::create("game1/mission/1_success.png");
+		sprite1 = Sprite::create("data/game1/mission/1_success.png");
 		break;
 	case 4://단어 분류 실패
-		sprite1 = Sprite::create("game1/mission/2_fail.png");
+		sprite1 = Sprite::create("data/game1/mission/2_fail.png");
 		fail = UserDefault::getInstance()->getIntegerForKey("failcnt");
 		UserDefault::getInstance()->setIntegerForKey("failcnt", fail+1);
 	UserDefault::getInstance()->flush();
 		break;
 	case 5://단어 분류 성공.
-		sprite1 = Sprite::create("game1/mission/2_success.png");
+		sprite1 = Sprite::create("data/game1/mission/2_success.png");
 		break;
 	default:
-		sprite1 = Sprite::create("MissionDialog/bg.png");
+		sprite1 = Sprite::create("data/MissionDialog/bg.png");
 	}
 
 	sprite1->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
@@ -103,8 +103,8 @@ void MissionDialog::initCancel()
 	 Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 	auto closeItem = MenuItemImage::create(
-                                           "CloseNormal.png",
-                                           "CloseSelected.png",
+                                           "data/CloseNormal.png",
+                                           "data/CloseSelected.png",
 										   CC_CALLBACK_1(MissionDialog::menuCloseCallback, this));
     
 	closeItem->setPosition(Vec2(origin.x + visibleSize.width - closeItem->getContentSize().width/2 ,

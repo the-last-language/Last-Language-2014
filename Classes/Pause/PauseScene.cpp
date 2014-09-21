@@ -27,7 +27,7 @@ bool PauseScene::init()
 	int saved = UserDefault::getInstance()->getIntegerForKey("LASTPLAYED");
 
 
-	auto sprite = Sprite::create("pause/PauseMenu.png");
+	auto sprite = Sprite::create("data/pause/PauseMenu.png");
 
 	sprite->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
 
@@ -35,7 +35,7 @@ bool PauseScene::init()
 
 
 	//계속하기
-	auto item_1 = MenuItemImage::create("pause/pause_btn1.png",	"pause/pause_btn1_on.png", CC_CALLBACK_1(PauseScene::sceneReturn, this));
+	auto item_1 = MenuItemImage::create("data/pause/pause_btn1.png",	"data/pause/pause_btn1_on.png", CC_CALLBACK_1(PauseScene::sceneReturn, this));
 	item_1->setPosition(140, 640-90);
 	auto menu_1 = Menu::create(item_1, NULL);
 	menu_1->setPosition(Vec2::ZERO);
@@ -43,14 +43,14 @@ bool PauseScene::init()
 
 
 	//가방열기
-	auto item_3 = MenuItemImage::create("pause/pause_btn2.png", "pause/pause_btn2_on.png", CC_CALLBACK_1(PauseScene::openBag, this));
+	auto item_3 = MenuItemImage::create("data/pause/pause_btn2.png", "data/pause/pause_btn2_on.png", CC_CALLBACK_1(PauseScene::openBag, this));
 	item_3->setPosition(140, 640-90-60);
 	auto menu_3 = Menu::create(item_3, NULL);
 	menu_3->setPosition(Vec2::ZERO);
 	this->addChild(menu_3);
 
 	//종료하기
-	auto item_4 = MenuItemImage::create("pause/pause_btn3.png", "pause/pause_btn3_on.png", CC_CALLBACK_1(PauseScene::exitGame, this));
+	auto item_4 = MenuItemImage::create("data/pause/pause_btn3.png", "data/pause/pause_btn3_on.png", CC_CALLBACK_1(PauseScene::exitGame, this));
 	item_4->setPosition(140, 640-90-120);
 	auto menu_4 = Menu::create(item_4, NULL);
 	menu_4->setPosition(Vec2::ZERO);

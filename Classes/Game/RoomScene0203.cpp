@@ -43,7 +43,7 @@ bool RoomScene0203::init()
 
 void RoomScene0203::initObj1()//복도로 나가기
 {
-	auto item_1 = MenuItemImage::create("game1/object/back.png", "game1/object/back_on.png", CC_CALLBACK_1(RoomScene0203::callObj1Content, this));
+	auto item_1 = MenuItemImage::create("data/game1/object/back.png", "data/game1/object/back_on.png", CC_CALLBACK_1(RoomScene0203::callObj1Content, this));
 	item_1->setPosition(480, 40);
 	auto menu_1 = Menu::create(item_1, NULL);
 	menu_1->setPosition(Vec2::ZERO);
@@ -56,8 +56,8 @@ void RoomScene0203::initExit()
  Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 	auto closeItem = MenuItemImage::create(
-                                           "CloseNormal.png",
-                                           "CloseSelected.png",
+                                           "data/CloseNormal.png",
+                                           "data/CloseSelected.png",
 										   CC_CALLBACK_1(RoomScene0203::menuCloseCallback, this));
     
 	closeItem->setPosition(Vec2(origin.x + visibleSize.width - closeItem->getContentSize().width/2 ,
@@ -74,7 +74,7 @@ void RoomScene0203::initBG()
 	 Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	auto sprite1 = Sprite::create("game1/bg2-2.png");
+	auto sprite1 = Sprite::create("data/game1/bg2-2.png");
 
 	sprite1->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
 
@@ -122,10 +122,10 @@ void RoomScene0203::nothing(Ref* pSender)
 
 void RoomScene0203::initObj2()//왼쪽 관물대 - 전선.
 {
-	auto item_1 = MenuItemImage::create("game1/object/room0203_0.png", "game1/object/room0203_0_on.png", CC_CALLBACK_1(RoomScene0203::callObj2Content, this));
+	auto item_1 = MenuItemImage::create("data/game1/object/room0203_0.png", "data/game1/object/room0203_0_on.png", CC_CALLBACK_1(RoomScene0203::callObj2Content, this));
 	if(UserDefault::getInstance()->getIntegerForKey("item_room0203_0") == 1)
 	{
-		item_1 = MenuItemImage::create("game1/object/room0203_0.png", "game1/object/room0203_0.png", CC_CALLBACK_1(RoomScene0203::nothing, this));
+		item_1 = MenuItemImage::create("data/game1/object/room0203_0.png", "data/game1/object/room0203_0.png", CC_CALLBACK_1(RoomScene0203::nothing, this));
 	}
 	item_1->setPosition(60, 640-270);
 	auto menu_1 = Menu::create(item_1, NULL);
@@ -135,10 +135,10 @@ void RoomScene0203::initObj2()//왼쪽 관물대 - 전선.
 
 void RoomScene0203::initObj3()//총기걸이. - 단어칩
 {
-	auto item_2 = MenuItemImage::create("game1/object/room0203_1.png", "game1/object/room0203_1_on.png", CC_CALLBACK_1(RoomScene0203::callObj3Content, this));
+	auto item_2 = MenuItemImage::create("data/game1/object/room0203_1.png", "data/game1/object/room0203_1_on.png", CC_CALLBACK_1(RoomScene0203::callObj3Content, this));
 	if(UserDefault::getInstance()->getIntegerForKey("item_room0203_1") == 1)
 	{
-		item_2 = MenuItemImage::create("game1/object/room0203_1.png", "game1/object/room0203_1.png", CC_CALLBACK_1(RoomScene0203::nothing, this));
+		item_2 = MenuItemImage::create("data/game1/object/room0203_1.png", "data/game1/object/room0203_1.png", CC_CALLBACK_1(RoomScene0203::nothing, this));
 	}
 	item_2->setPosition(270, 640-315);
 	auto menu_2 = Menu::create(item_2, NULL);
