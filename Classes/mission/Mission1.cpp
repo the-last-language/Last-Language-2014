@@ -753,7 +753,7 @@ void Mission1::result(Ref* pSender)
 	int i;
 	if(UserDefault::getInstance()->getIntegerForKey("Mission1") == 1)
 	{
-		int b[16] = {1,1,1,0,1,1,0,0,1,1,0,0,1,0,0,0};
+		int b[16] = {0,1,1,0,1,1,0,0,1,1,0,0,1,0,0,0};
 		for ( i = 0 ; i < 16 ; i ++)
 		{
 			if ( a[i] != b[i])
